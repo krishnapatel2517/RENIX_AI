@@ -1,0 +1,103 @@
+{
+  "name": "renix_thinking",
+  "version": "1.0",
+  "description": "Thinking animation displayed while RENIX is processing and reasoning about a request.",
+  "loop": true,
+  "duration": 2.4,
+  "fps": 60,
+
+  "keyframes": [
+    {
+      "time": 0.0,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.8,
+      "pulse": 0.2
+    },
+    {
+      "time": 0.6,
+      "opacity": 0.98,
+      "scale": 1.015,
+      "rotation": 1.5,
+      "glow": 0.95,
+      "pulse": 0.6
+    },
+    {
+      "time": 1.2,
+      "opacity": 1.0,
+      "scale": 1.03,
+      "rotation": 0.0,
+      "glow": 1.1,
+      "pulse": 1.0
+    },
+    {
+      "time": 1.8,
+      "opacity": 0.98,
+      "scale": 1.015,
+      "rotation": -1.5,
+      "glow": 0.95,
+      "pulse": 0.6
+    },
+    {
+      "time": 2.4,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.8,
+      "pulse": 0.2
+    }
+  ],
+
+  "effects": {
+    "thinkingRing": {
+      "enabled": true,
+      "count": 3,
+      "rotationSpeed": 35.0,
+      "radius": 1.15,
+      "opacity": 0.55
+    },
+
+    "particles": {
+      "enabled": true,
+      "count": 100,
+      "movement": "orbital",
+      "speed": 0.8,
+      "radius": 1.35
+    },
+
+    "pulse": {
+      "enabled": true,
+      "speed": 1.4,
+      "strength": 0.3
+    },
+
+    "glow": {
+      "enabled": true,
+      "minimum": 0.7,
+      "maximum": 1.1,
+      "speed": 1.6
+    },
+
+    "scanline": {
+      "enabled": true,
+      "strength": 0.15,
+      "speed": 1.2
+    }
+  },
+
+  "status": {
+    "displayText": "THINKING",
+    "showIndicator": true,
+    "indicatorPulse": true
+  },
+
+  "onComplete": {
+    "nextState": "processing"
+  },
+
+  "easing": {
+    "default": "ease_in_out",
+    "rotation": "linear"
+  }
+}

@@ -1,0 +1,540 @@
+```yaml
+# ============================================================
+# RENIX MEMORY CONFIGURATION
+# ============================================================
+
+system:
+  enabled: true
+  mode: "adaptive"
+  timezone: "Asia/Kolkata"
+
+  automatic_memory: true
+  context_aware: true
+  privacy_aware: true
+
+  data_directory: "data/memory"
+
+
+# ============================================================
+# MEMORY MANAGER
+# ============================================================
+
+memory_manager:
+  enabled: true
+
+  automatic_store: true
+  automatic_retrieve: true
+  automatic_update: true
+  automatic_cleanup: true
+
+  maximum_memories_per_query: 20
+
+  minimum_relevance_score: 0.60
+
+  duplicate_detection: true
+
+  contradiction_detection: true
+
+  memory_conflict_resolution: true
+
+
+# ============================================================
+# SHORT-TERM MEMORY
+# ============================================================
+
+short_term:
+  enabled: true
+
+  maximum_items: 100
+
+  maximum_age_minutes: 60
+
+  include_current_conversation: true
+
+  include_recent_events: true
+
+  include_recent_tasks: true
+
+  automatic_cleanup: true
+
+  cleanup_interval_minutes: 10
+
+
+# ============================================================
+# LONG-TERM MEMORY
+# ============================================================
+
+long_term:
+  enabled: true
+
+  automatic_storage: true
+
+  importance_threshold: 0.60
+
+  maximum_items: 100000
+
+  retain_important_memories: true
+
+  automatic_consolidation: true
+
+  consolidation_interval_hours: 24
+
+
+# ============================================================
+# EPISODIC MEMORY
+# ============================================================
+
+episodic:
+  enabled: true
+
+  store_events: true
+
+  store_conversations: true
+
+  store_tasks: true
+
+  store_outcomes: true
+
+  importance_threshold: 0.55
+
+  maximum_events: 50000
+
+  automatic_summarization: true
+
+
+# ============================================================
+# SEMANTIC MEMORY
+# ============================================================
+
+semantic:
+  enabled: true
+
+  store_facts: true
+
+  store_concepts: true
+
+  store_relationships: true
+
+  store_entities: true
+
+  confidence_threshold: 0.65
+
+  contradiction_detection: true
+
+  automatic_fact_updates: true
+
+
+# ============================================================
+# PROCEDURAL MEMORY
+# ============================================================
+
+procedural:
+  enabled: true
+
+  store_workflows: true
+
+  store_successful_actions: true
+
+  store_user_routines: true
+
+  store_problem_solutions: true
+
+  minimum_success_confidence: 0.70
+
+  automatic_improvement: true
+
+
+# ============================================================
+# PROJECT MEMORY
+# ============================================================
+
+project_memory:
+  enabled: true
+
+  store_project_context: true
+
+  store_project_structure: true
+
+  store_project_decisions: true
+
+  store_project_preferences: true
+
+  store_project_history: true
+
+  automatic_project_detection: true
+
+  project_directory: "data/projects"
+
+
+# ============================================================
+# TASK MEMORY
+# ============================================================
+
+task_memory:
+  enabled: true
+
+  store_tasks: true
+
+  store_task_plans: true
+
+  store_task_results: true
+
+  store_failures: true
+
+  store_successes: true
+
+  remember_incomplete_tasks: true
+
+  remember_recurring_tasks: true
+
+  task_directory: "data/tasks"
+
+
+# ============================================================
+# PREFERENCE MEMORY
+# ============================================================
+
+preference_memory:
+  enabled: true
+
+  learn_preferences: true
+
+  learn_language_preferences: true
+
+  learn_response_preferences: true
+
+  learn_ui_preferences: true
+
+  learn_voice_preferences: true
+
+  learn_workflow_preferences: true
+
+  confidence_threshold: 0.70
+
+  require_confirmation_before_permanent_change: true
+
+
+# ============================================================
+# CONVERSATION MEMORY
+# ============================================================
+
+conversation_memory:
+  enabled: true
+
+  store_conversations: true
+
+  store_messages: true
+
+  automatic_summarization: true
+
+  summary_after_messages: 50
+
+  maximum_messages_per_conversation: 1000
+
+  conversation_directory: "data/conversations"
+
+  preserve_context: true
+
+
+# ============================================================
+# VECTOR STORE
+# ============================================================
+
+vector_store:
+  enabled: true
+
+  backend: "auto"
+
+  directory: "data/embeddings"
+
+  collection_name: "renix_memory"
+
+  distance_metric: "cosine"
+
+  normalize_embeddings: true
+
+  persist: true
+
+  batch_size: 32
+
+
+# ============================================================
+# EMBEDDINGS
+# ============================================================
+
+embeddings:
+  enabled: true
+
+  provider: "auto"
+
+  model: "auto"
+
+  dimensions: "auto"
+
+  normalize: true
+
+  batch_size: 32
+
+  timeout_seconds: 60
+
+  cache_embeddings: true
+
+
+# ============================================================
+# RETRIEVAL
+# ============================================================
+
+retrieval:
+  enabled: true
+
+  strategy: "hybrid"
+
+  semantic_search: true
+
+  keyword_search: true
+
+  metadata_filtering: true
+
+  reranking: true
+
+  maximum_candidates: 50
+
+  maximum_results: 10
+
+  minimum_score: 0.60
+
+  recency_weight: 0.20
+
+  relevance_weight: 0.60
+
+  importance_weight: 0.20
+
+
+# ============================================================
+# MEMORY SEARCH
+# ============================================================
+
+memory_search:
+  enabled: true
+
+  natural_language_queries: true
+
+  fuzzy_matching: true
+
+  semantic_matching: true
+
+  keyword_matching: true
+
+  cross_memory_search: true
+
+  maximum_results: 20
+
+  minimum_confidence: 0.60
+
+
+# ============================================================
+# MEMORY IMPORTANCE
+# ============================================================
+
+importance:
+  enabled: true
+
+  factors:
+    relevance: 0.30
+    frequency: 0.15
+    recency: 0.15
+    emotional_significance: 0.10
+    user_explicitness: 0.20
+    task_value: 0.10
+
+  thresholds:
+    discard: 0.20
+    temporary: 0.40
+    normal: 0.60
+    important: 0.80
+    critical: 0.95
+
+
+# ============================================================
+# MEMORY CONSOLIDATION
+# ============================================================
+
+consolidation:
+  enabled: true
+
+  merge_similar_memories: true
+
+  remove_duplicates: true
+
+  resolve_conflicts: true
+
+  summarize_old_memories: true
+
+  promote_important_memories: true
+
+  interval_hours: 24
+
+  similarity_threshold: 0.90
+
+
+# ============================================================
+# MEMORY CLEANUP
+# ============================================================
+
+cleanup:
+  enabled: true
+
+  automatic: true
+
+  interval_hours: 24
+
+  remove_expired_memories: true
+
+  remove_duplicates: true
+
+  remove_low_value_memories: true
+
+  remove_invalid_memories: true
+
+  minimum_retention_score: 0.20
+
+  maximum_memory_age_days: 3650
+
+
+# ============================================================
+# PRIVACY
+# ============================================================
+
+privacy:
+  enabled: true
+
+  local_processing_preferred: true
+
+  user_controlled_memory: true
+
+  explicit_memory_commands: true
+
+  allow_memory_deletion: true
+
+  allow_memory_export: true
+
+  allow_memory_reset: true
+
+  sensitive_memory_protection: true
+
+  do_not_store_passwords: true
+
+  do_not_store_api_keys: true
+
+  do_not_store_authentication_tokens: true
+
+  do_not_store_credit_card_data: true
+
+  redact_sensitive_information: true
+
+
+# ============================================================
+# MEMORY COMMANDS
+# ============================================================
+
+commands:
+  remember:
+    enabled: true
+    examples:
+      - "remember this"
+      - "save this"
+      - "don't forget this"
+
+  forget:
+    enabled: true
+    examples:
+      - "forget this"
+      - "delete that memory"
+      - "remove this from memory"
+
+  recall:
+    enabled: true
+    examples:
+      - "what do you remember about this?"
+      - "do you remember?"
+      - "what did we discuss?"
+
+  memory_status:
+    enabled: true
+
+  memory_export:
+    enabled: true
+
+  memory_reset:
+    enabled: true
+    require_confirmation: true
+
+
+# ============================================================
+# PERFORMANCE
+# ============================================================
+
+performance:
+  asynchronous_processing: true
+
+  background_indexing: true
+
+  background_cleanup: true
+
+  cache_queries: true
+
+  cache_results: true
+
+  maximum_workers: 4
+
+  batch_processing: true
+
+  adaptive_resource_usage: true
+
+
+# ============================================================
+# LOGGING
+# ============================================================
+
+logging:
+  enabled: true
+
+  level: "INFO"
+
+  log_memory_creation: true
+
+  log_memory_updates: true
+
+  log_memory_deletion: true
+
+  log_memory_retrieval: false
+
+  log_search_queries: false
+
+  redact_sensitive_data: true
+
+  log_directory: "logs/ai"
+
+
+# ============================================================
+# DEVELOPMENT
+# ============================================================
+
+development:
+  debug: true
+
+  verbose_logs: false
+
+  mock_embeddings: false
+
+  mock_vector_store: false
+
+  disable_cleanup: false
+
+  test_memory_operations: false
+
+
+# ============================================================
+# END OF MEMORY CONFIGURATION
+# ============================================================
+```

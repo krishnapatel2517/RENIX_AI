@@ -1,0 +1,149 @@
+{
+  "name": "renix_pulse",
+  "version": "1.0",
+  "description": "Continuous holographic pulse animation for RENIX interface elements.",
+  "loop": true,
+  "duration": 1.6,
+  "fps": 60,
+
+  "keyframes": [
+    {
+      "time": 0.0,
+      "opacity": 0.75,
+      "scale": 0.96,
+      "glow": 0.55,
+      "pulse": 0.2,
+      "ringScale": 0.9,
+      "ringOpacity": 0.65
+    },
+    {
+      "time": 0.2,
+      "opacity": 0.9,
+      "scale": 0.98,
+      "glow": 0.75,
+      "pulse": 0.5,
+      "ringScale": 1.0,
+      "ringOpacity": 0.75
+    },
+    {
+      "time": 0.4,
+      "opacity": 1.0,
+      "scale": 1.02,
+      "glow": 1.0,
+      "pulse": 1.0,
+      "ringScale": 1.12,
+      "ringOpacity": 0.55
+    },
+    {
+      "time": 0.6,
+      "opacity": 0.95,
+      "scale": 1.0,
+      "glow": 0.85,
+      "pulse": 0.65,
+      "ringScale": 1.22,
+      "ringOpacity": 0.35
+    },
+    {
+      "time": 0.8,
+      "opacity": 0.8,
+      "scale": 0.98,
+      "glow": 0.65,
+      "pulse": 0.3,
+      "ringScale": 1.32,
+      "ringOpacity": 0.2
+    },
+    {
+      "time": 1.0,
+      "opacity": 0.75,
+      "scale": 0.96,
+      "glow": 0.55,
+      "pulse": 0.2,
+      "ringScale": 0.9,
+      "ringOpacity": 0.65
+    },
+    {
+      "time": 1.2,
+      "opacity": 0.9,
+      "scale": 0.99,
+      "glow": 0.8,
+      "pulse": 0.6,
+      "ringScale": 1.08,
+      "ringOpacity": 0.6
+    },
+    {
+      "time": 1.4,
+      "opacity": 1.0,
+      "scale": 1.03,
+      "glow": 1.05,
+      "pulse": 1.0,
+      "ringScale": 1.2,
+      "ringOpacity": 0.4
+    },
+    {
+      "time": 1.6,
+      "opacity": 0.75,
+      "scale": 0.96,
+      "glow": 0.55,
+      "pulse": 0.2,
+      "ringScale": 0.9,
+      "ringOpacity": 0.65
+    }
+  ],
+
+  "effects": {
+    "corePulse": {
+      "enabled": true,
+      "speed": 1.25,
+      "strength": 0.8,
+      "minimumScale": 0.96,
+      "maximumScale": 1.03
+    },
+
+    "expandingRing": {
+      "enabled": true,
+      "count": 2,
+      "startScale": 0.9,
+      "endScale": 1.35,
+      "duration": 0.8,
+      "opacityFade": true
+    },
+
+    "glow": {
+      "enabled": true,
+      "minimum": 0.45,
+      "maximum": 1.05,
+      "speed": 2.5
+    },
+
+    "particles": {
+      "enabled": true,
+      "count": 30,
+      "movement": "radial",
+      "speed": 0.5,
+      "radius": 1.15
+    }
+  },
+
+  "status": {
+    "displayText": "PULSE",
+    "showIndicator": true,
+    "indicatorPulse": true
+  },
+
+  "sound": {
+    "enabled": false,
+    "asset": "assets/sounds/pulse.wav",
+    "volume": 0.2,
+    "loop": true
+  },
+
+  "onComplete": {
+    "nextState": "pulse"
+  },
+
+  "easing": {
+    "default": "ease_in_out",
+    "pulse": "ease_in_out",
+    "ring": "ease_out"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "store_version": 1,
+  "format": "renix_embedding_metadata",
+
+  "metadata": {
+    "name": "RENIX Embedding Metadata",
+    "description": "Global configuration, statistics and health information for embeddings.",
+    "created_at": null,
+    "updated_at": null,
+    "last_read": null,
+    "last_write": null,
+    "last_validation": null,
+    "last_cleanup": null,
+    "last_backup": null
+  },
+
+  "store": {
+    "version": "1.0",
+    "storage_format": "json",
+    "encoding": "utf-8",
+    "vector_storage": "json",
+    "distance_metric": "cosine"
+  },
+
+  "defaults": {
+    "model": null,
+    "dimension": null,
+    "metric": "cosine",
+    "normalize": true,
+    "similarity_threshold": 0.75,
+    "top_k": 10
+  },
+
+  "statistics": {
+    "total_embeddings": 0,
+    "active_embeddings": 0,
+    "deleted_embeddings": 0,
+    "total_collections": 0,
+    "total_models": 0,
+    "total_vectors": 0,
+    "total_dimensions": 0,
+    "average_dimension": 0,
+    "total_searches": 0,
+    "total_insertions": 0,
+    "total_updates": 0,
+    "total_deletions": 0
+  },
+
+  "health": {
+    "status": "initialized",
+    "storage_available": true,
+    "index_available": true,
+    "vector_backend_available": false,
+    "model_available": false,
+    "corrupted_records": 0,
+    "invalid_records": 0,
+    "orphaned_embeddings": 0,
+    "last_integrity_check": null
+  },
+
+  "maintenance": {
+    "cleanup_enabled": true,
+    "backup_enabled": true,
+    "indexing_enabled": true,
+    "integrity_checks_enabled": true,
+    "automatic_recovery_enabled": true
+  }
+}

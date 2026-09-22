@@ -1,0 +1,103 @@
+name: morning
+version: "1.0"
+
+description: >
+  RENIX morning routine. Prepares the user for the day by
+  checking the system, providing useful information, and
+  optionally controlling configured smart-home devices.
+
+enabled: true
+
+variables:
+  wake_time: "07:00"
+  weather_enabled: true
+  calendar_enabled: true
+  smart_home_enabled: false
+
+triggers:
+  - type: schedule
+    time: "${wake_time}"
+    repeat: daily
+
+steps:
+
+  - id: initialize
+    type: system
+    action: initialize
+    continue_on_error: true
+
+  - id: greeting
+    type: assistant
+    action: speak
+    data:
+      message: "Good morning. RENIX is online and ready."
+    continue_on_error: true
+
+  - id: weather
+    type: condition
+    condition: "${weather_enabled} == true"
+    then:
+
+      - id: get_weather
+        type: weather
+        action: current
+        data:
+          location: "${location}"
+        save_as: weather
+        continue_on_error: true
+
+      - id: weather_summary
+        type: assistant
+        action: speak
+        data:
+          message: >
+            Here is your current weather update:
+            ${weather}
+        continue_on_error: true
+
+  - id: calendar
+    type: condition
+    condition: "${calendar_enabled} == true"
+    then:
+
+      - id: get_calendar
+        type: calendar
+        action: today
+        save_as: today's_schedule
+        continue_on_error: true
+
+      - id: calendar_summary
+        type: assistant
+        action: speak
+        data:
+          message: >
+            Here is your schedule for today:
+            ${today's_schedule}
+        continue_on_error: true
+
+  - id: smart_home
+    type: condition
+    condition: "${smart_home_enabled} == true"
+    then:
+
+      - id: lights
+        type: smart_home
+        action: set_lights
+        data:
+          state: "on"
+          brightness: 70
+        continue_on_error: true
+
+  - id: system_status
+    type: system_monitor
+    action: status
+    save_as: system_status
+    continue_on_error: true
+
+  - id: final_message
+    type: assistant
+    action: speak
+    data:
+      message: >
+        Morning routine complete. Your system is ready.
+    continue_on_error: true

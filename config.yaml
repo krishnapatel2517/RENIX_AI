@@ -1,0 +1,195 @@
+renix:
+  name: RENIX
+  version: 1.0.0
+  environment: development
+  debug: false
+  language: en
+  timezone: Asia/Kolkata
+  startup_message: true
+  auto_start_services: true
+
+core:
+  orchestrator_enabled: true
+  command_router_enabled: true
+  intent_engine_enabled: true
+  context_engine_enabled: true
+  reasoning_engine_enabled: true
+  planning_engine_enabled: true
+  decision_engine_enabled: true
+  execution_engine_enabled: true
+  response_engine_enabled: true
+  event_bus_enabled: true
+  scheduler_enabled: true
+  max_concurrent_tasks: 5
+  task_timeout: 300
+
+ai:
+  enabled: true
+  default_provider: gemini
+  providers:
+    openai: {enabled: true, model: gpt-4o-mini}
+    gemini: {enabled: true, model: gemini-2.5-flash}
+    anthropic: {enabled: false, model: claude-sonnet}
+  temperature: 0.7
+  max_tokens: 4096
+  streaming: true
+  fallback_enabled: true
+  system_prompt: >-
+    You are RENIX, a helpful, intelligent, friendly, proactive, and
+    safety-aware personal artificial intelligence assistant.
+
+agents:
+  enabled: true
+  computer_agent: true
+  file_agent: true
+  browser_agent: true
+  coding_agent: true
+  research_agent: true
+  study_agent: true
+  cricket_agent: true
+  device_agent: true
+  robotics_agent: true
+  system_agent: true
+  automation_agent: true
+  max_parallel_agents: 3
+
+memory:
+  enabled: true
+  short_term: {enabled: true, max_messages: 50}
+  long_term: {enabled: true}
+  episodic: {enabled: true}
+  semantic: {enabled: true}
+  procedural: {enabled: true}
+  conversation: {enabled: true}
+  project: {enabled: true}
+  task: {enabled: true}
+  preferences: {enabled: true}
+  embeddings: {enabled: true, model: all-MiniLM-L6-v2}
+  vector_store: {enabled: true, provider: chromadb, directory: data/embeddings}
+  privacy: {enabled: true, require_confirmation_for_sensitive_memory: true}
+  cleanup: {enabled: true, interval_hours: 24}
+
+voice:
+  enabled: true
+  microphone: {enabled: true, device_index: null}
+  speech_to_text: {enabled: true, language: en-IN}
+  text_to_speech: {enabled: true, rate: 180, volume: 1.0}
+  wake_word: {enabled: true, word: renix}
+  clap_detector: {enabled: true, required_claps: 2}
+  noise_cancellation: {enabled: true}
+  conversation_mode: {enabled: true}
+  interruption: {enabled: true}
+  language_detection: {enabled: true}
+
+vision:
+  enabled: true
+  camera: {enabled: true, index: 0, width: 1280, height: 720, fps: 30}
+  face_detection: true
+  face_recognition: true
+  person_detection: true
+  object_detection: true
+  object_tracking: true
+  hand_detection: true
+  pose_detection: true
+  scene_understanding: true
+  ocr: true
+  document_detection: true
+  qr_detection: true
+  screen_capture: true
+  screen_understanding: true
+
+gestures:
+  enabled: true
+  camera_index: 0
+  hand_tracking: true
+  finger_tracking: true
+  gesture_types: {pinch: true, swipe: true, grab: true, rotate: true, zoom: true, drag: true, point: true, palm: true, two_hand: true}
+  sensitivity: 0.7
+
+ui:
+  enabled: true
+  theme: renix
+  primary_color: '#00FF88'
+  secondary_color: '#00AAFF'
+  animations: true
+  particles: true
+  gesture_control: true
+  voice_control: true
+  fullscreen: false
+  startup_window: {width: 1200, height: 750}
+
+computer:
+  enabled: true
+  mouse_control: true
+  keyboard_control: true
+  application_control: true
+  window_management: true
+  clipboard: true
+  screenshots: true
+  screen_reader: true
+  volume_control: true
+  brightness_control: true
+  display_control: true
+  process_management: true
+  require_confirmation_for_destructive_actions: true
+
+files:
+  enabled: true
+  search: true
+  semantic_search: true
+  file_classification: true
+  metadata: true
+  previews: true
+  duplicate_detection: true
+  copy: true
+  move: true
+  rename: true
+  delete: true
+  archive_management: true
+  document_reader: true
+  pdf_reader: true
+  image_reader: true
+  require_confirmation_for_delete: true
+
+browser: {enabled: true, automation: true, web_search: true, page_reader: true, webpage_parser: true, form_control: true, link_handler: true, downloads: true, headless: false, timeout_seconds: 30}
+research: {enabled: true, max_sources: 10, source_ranking: true, fact_checking: true, summarization: true, comparisons: true, citations: true, report_generation: true}
+coding: {enabled: true, code_reading: true, code_writing: true, code_editing: true, code_analysis: true, debugging: true, error_analysis: true, testing: true, builds: true, dependency_management: true, terminal: true, git: true, documentation: true, require_confirmation_before_terminal_commands: true}
+automation: {enabled: true, workflows: true, triggers: true, routines: true, scheduled_tasks: true, macros: true, max_concurrent_workflows: 3}
+
+security:
+  enabled: true
+  authentication: true
+  face_authentication: false
+  voice_authentication: false
+  permissions: true
+  access_control: true
+  confirmation: true
+  command_safety: true
+  sandbox: true
+  audit_logging: true
+  threat_monitoring: true
+  secure_mode: false
+  emergency_lock: true
+  secrets_manager: true
+
+devices:
+  enabled: true
+  discovery: true
+  pairing: true
+  protocols: {bluetooth: true, wifi: true, mqtt: true, http: true, websocket: true}
+  smart_home: {enabled: true, lights: true, fans: true, ac: true, tv: true, speakers: true, plugs: true, cameras: true, sensors: true}
+  mobile: {enabled: false}
+  smartwatch: {enabled: false}
+  tv: {enabled: false}
+
+robotics: {enabled: false, robot_control: true, servo_control: true, sensor_management: true, robot_vision: true, navigation: true, object_manipulation: true, safety: true}
+system_monitor: {enabled: true, update_interval: 2, cpu: true, gpu: true, ram: true, disk: true, network: true, battery: true, processes: true, temperature: true, performance_analysis: true}
+education: {enabled: true}
+sports: {enabled: true, cricket: {enabled: true}, performance: {statistics: true, graphs: true, trends: true}}
+media: {enabled: true, music: true, video: true, playlists: true, volume: true, casting: true}
+personal: {enabled: true, calendar: true, reminders: true, tasks: true, notes: true, alarms: true, timers: true, habits: true, daily_planner: true}
+analytics: {enabled: true, csv: true, excel: true, json: true, statistics: true, charts: true, tables: true, reports: true}
+notifications: {enabled: true, desktop: true, priorities: {low: true, medium: true, high: true, critical: true}}
+database: {enabled: true, provider: sqlite, url: sqlite:///data/renix.db, auto_create: true}
+logging: {enabled: true, level: INFO, directory: logs, console_output: true, file_output: true, max_file_size_mb: 10, backup_count: 5}
+development: {testing: false, hot_reload: false, verbose_errors: true, profiling: false}

@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0.0",
+  "store_version": 1,
+  "format": "renix.command_statistics",
+  "description": "Aggregated statistics for commands processed by RENIX.",
+  "updated_at": null,
+
+  "configuration": {
+    "track_command_count": true,
+    "track_success_count": true,
+    "track_failure_count": true,
+    "track_duration": true,
+    "track_intents": true,
+    "track_agents": true,
+    "track_languages": true,
+    "track_sources": true,
+    "track_hourly_distribution": true,
+    "track_daily_distribution": true,
+    "retention_days": 3650
+  },
+
+  "totals": {
+    "commands_received": 0,
+    "commands_completed": 0,
+    "commands_failed": 0,
+    "commands_cancelled": 0,
+    "commands_rejected": 0,
+    "commands_interrupted": 0
+  },
+
+  "performance": {
+    "total_execution_time_ms": 0,
+    "average_execution_time_ms": 0,
+    "minimum_execution_time_ms": 0,
+    "maximum_execution_time_ms": 0,
+    "median_execution_time_ms": 0,
+    "p95_execution_time_ms": 0,
+    "p99_execution_time_ms": 0
+  },
+
+  "success_rate": {
+    "percentage": 0,
+    "successful": 0,
+    "failed": 0
+  },
+
+  "by_intent": {},
+
+  "by_agent": {},
+
+  "by_language": {},
+
+  "by_source": {},
+
+  "by_status": {
+    "completed": 0,
+    "failed": 0,
+    "cancelled": 0,
+    "rejected": 0,
+    "interrupted": 0
+  },
+
+  "hourly_distribution": {
+    "00": 0,
+    "01": 0,
+    "02": 0,
+    "03": 0,
+    "04": 0,
+    "05": 0,
+    "06": 0,
+    "07": 0,
+    "08": 0,
+    "09": 0,
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "13": 0,
+    "14": 0,
+    "15": 0,
+    "16": 0,
+    "17": 0,
+    "18": 0,
+    "19": 0,
+    "20": 0,
+    "21": 0,
+    "22": 0,
+    "23": 0
+  },
+
+  "daily_distribution": {},
+
+  "recent_commands": [],
+
+  "top_commands": [],
+
+  "errors": {
+    "total": 0,
+    "by_type": {}
+  },
+
+  "integrity": {
+    "record_count": 0,
+    "last_recalculated_at": null,
+    "checksum": null,
+    "healthy": true
+  }
+}

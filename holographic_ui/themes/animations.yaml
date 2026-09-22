@@ -1,0 +1,160 @@
+name: RENIX_ANIMATIONS
+version: "1.0"
+
+global:
+  enabled: true
+  speed: 1.0
+  quality: high
+
+transitions:
+
+  fade:
+    duration: 0.25
+    easing: ease_out
+
+  slide:
+    duration: 0.35
+    easing: ease_out
+
+  scale:
+    duration: 0.30
+    easing: ease_out_back
+
+  hologram_open:
+    duration: 0.65
+    easing: ease_out_expo
+
+  hologram_close:
+    duration: 0.45
+    easing: ease_in_expo
+
+
+hologram:
+
+  idle:
+    enabled: true
+    pulse:
+      enabled: true
+      duration: 2.4
+      intensity: 0.12
+
+    rotation:
+      enabled: true
+      speed: 0.25
+
+    floating:
+      enabled: true
+      amplitude: 4
+      duration: 3.2
+
+  active:
+    pulse:
+      enabled: true
+      duration: 0.9
+      intensity: 0.35
+
+    rotation:
+      enabled: true
+      speed: 0.65
+
+
+particles:
+
+  enabled: true
+
+  spawn:
+    rate: 25
+
+  movement:
+    speed: 0.35
+    randomness: 0.75
+
+  lifetime:
+    minimum: 0.8
+    maximum: 2.5
+
+  fade:
+    enabled: true
+
+
+gesture:
+
+  cursor_move:
+    smoothing: 0.12
+
+  pinch:
+    scale_in:
+      duration: 0.18
+
+    scale_out:
+      duration: 0.18
+
+  grab:
+    compression:
+      duration: 0.22
+
+  swipe:
+    trail:
+      enabled: true
+      duration: 0.25
+
+  zoom:
+    duration: 0.20
+
+  rotate:
+    duration: 0.20
+
+
+notifications:
+
+  enter:
+    duration: 0.35
+    easing: ease_out
+
+  exit:
+    duration: 0.25
+    easing: ease_in
+
+  pulse:
+    duration: 1.2
+    repeat: 2
+
+
+buttons:
+
+  hover:
+    duration: 0.15
+
+  press:
+    duration: 0.08
+
+  release:
+    duration: 0.16
+
+
+windows:
+
+  open:
+    duration: 0.45
+    easing: ease_out_back
+
+  close:
+    duration: 0.30
+    easing: ease_in
+
+  minimize:
+    duration: 0.28
+
+  maximize:
+    duration: 0.38
+
+
+performance:
+
+  reduced_motion:
+    enabled: true
+
+  low_fps_threshold: 30
+
+  automatic_quality:
+    enabled: true

@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0.0",
+  "store_version": 1,
+  "format": "renix.performance_statistics",
+  "description": "RENIX system, AI, command, and module performance statistics.",
+  "updated_at": null,
+
+  "configuration": {
+    "track_cpu": true,
+    "track_gpu": true,
+    "track_memory": true,
+    "track_disk": true,
+    "track_network": true,
+    "track_latency": true,
+    "track_response_time": true,
+    "track_module_performance": true,
+    "sampling_interval_seconds": 5,
+    "retention_days": 3650
+  },
+
+  "system": {
+    "uptime_seconds": 0,
+    "cpu": {
+      "average_percent": 0,
+      "minimum_percent": 0,
+      "maximum_percent": 0,
+      "peak_percent": 0
+    },
+    "gpu": {
+      "average_percent": 0,
+      "minimum_percent": 0,
+      "maximum_percent": 0,
+      "peak_percent": 0
+    },
+    "memory": {
+      "average_percent": 0,
+      "minimum_percent": 0,
+      "maximum_percent": 0,
+      "peak_percent": 0
+    },
+    "disk": {
+      "read_mb": 0,
+      "write_mb": 0,
+      "read_operations": 0,
+      "write_operations": 0
+    },
+    "network": {
+      "download_mb": 0,
+      "upload_mb": 0,
+      "requests": 0,
+      "failed_requests": 0
+    }
+  },
+
+  "latency": {
+    "average_ms": 0,
+    "minimum_ms": 0,
+    "maximum_ms": 0,
+    "median_ms": 0,
+    "p50_ms": 0,
+    "p90_ms": 0,
+    "p95_ms": 0,
+    "p99_ms": 0
+  },
+
+  "response_time": {
+    "average_ms": 0,
+    "minimum_ms": 0,
+    "maximum_ms": 0,
+    "median_ms": 0,
+    "p95_ms": 0,
+    "p99_ms": 0
+  },
+
+  "ai_performance": {
+    "requests": 0,
+    "successful_requests": 0,
+    "failed_requests": 0,
+    "average_generation_time_ms": 0,
+    "average_first_token_ms": 0,
+    "average_tokens_per_second": 0,
+    "total_input_tokens": 0,
+    "total_output_tokens": 0
+  },
+
+  "module_performance": {},
+
+  "agent_performance": {},
+
+  "operation_performance": {},
+
+  "time_series": [],
+
+  "slow_operations": [],
+
+  "health": {
+    "overall_score": 100,
+    "status": "healthy",
+    "bottlenecks": [],
+    "recommendations": []
+  },
+
+  "integrity": {
+    "record_count": 0,
+    "last_recalculated_at": null,
+    "checksum": null,
+    "healthy": true
+  }
+}

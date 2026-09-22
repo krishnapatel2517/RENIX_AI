@@ -1,0 +1,158 @@
+{
+  "name": "renix_hologram_open",
+  "version": "1.0",
+  "description": "Holographic interface opening animation for RENIX.",
+  "loop": false,
+  "duration": 1.8,
+  "fps": 60,
+
+  "keyframes": [
+    {
+      "time": 0.0,
+      "opacity": 0.0,
+      "scale": 0.65,
+      "rotation": 0.0,
+      "glow": 0.0,
+      "scanProgress": 0.0,
+      "verticalOffset": 12.0
+    },
+    {
+      "time": 0.18,
+      "opacity": 0.25,
+      "scale": 0.76,
+      "rotation": 0.0,
+      "glow": 0.35,
+      "scanProgress": 0.15,
+      "verticalOffset": 8.0
+    },
+    {
+      "time": 0.4,
+      "opacity": 0.65,
+      "scale": 0.9,
+      "rotation": 0.0,
+      "glow": 0.75,
+      "scanProgress": 0.4,
+      "verticalOffset": 4.0
+    },
+    {
+      "time": 0.65,
+      "opacity": 1.0,
+      "scale": 1.06,
+      "rotation": 0.0,
+      "glow": 1.15,
+      "scanProgress": 0.7,
+      "verticalOffset": -2.0
+    },
+    {
+      "time": 0.9,
+      "opacity": 1.0,
+      "scale": 0.98,
+      "rotation": 0.0,
+      "glow": 0.95,
+      "scanProgress": 1.0,
+      "verticalOffset": 0.0
+    },
+    {
+      "time": 1.2,
+      "opacity": 1.0,
+      "scale": 1.01,
+      "rotation": 0.0,
+      "glow": 1.0,
+      "scanProgress": 1.0,
+      "verticalOffset": 0.0
+    },
+    {
+      "time": 1.5,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.85,
+      "scanProgress": 1.0,
+      "verticalOffset": 0.0
+    },
+    {
+      "time": 1.8,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.8,
+      "scanProgress": 1.0,
+      "verticalOffset": 0.0
+    }
+  ],
+
+  "effects": {
+    "scanReveal": {
+      "enabled": true,
+      "direction": "bottom_to_top",
+      "duration": 0.9,
+      "startTime": 0.0,
+      "intensity": 1.0
+    },
+
+    "glow": {
+      "enabled": true,
+      "minimum": 0.3,
+      "maximum": 1.15,
+      "speed": 2.5
+    },
+
+    "gridExpansion": {
+      "enabled": true,
+      "startScale": 0.5,
+      "endScale": 1.0,
+      "duration": 0.8
+    },
+
+    "rings": {
+      "enabled": true,
+      "count": 3,
+      "startRadius": 0.25,
+      "endRadius": 1.3,
+      "rotationSpeed": 90.0,
+      "opacity": 0.7
+    },
+
+    "particles": {
+      "enabled": true,
+      "count": 90,
+      "movement": "radial_inward",
+      "speed": 1.2,
+      "radius": 1.5
+    },
+
+    "scanlines": {
+      "enabled": true,
+      "strength": 0.22,
+      "speed": 2.0
+    },
+
+    "distortion": {
+      "enabled": true,
+      "strength": 0.08,
+      "duration": 0.5
+    }
+  },
+
+  "status": {
+    "displayText": "HOLOGRAM ONLINE",
+    "showIndicator": true,
+    "indicatorPulse": true
+  },
+
+  "sound": {
+    "enabled": true,
+    "asset": "assets/sounds/hologram_open.wav",
+    "volume": 0.45
+  },
+
+  "onComplete": {
+    "nextState": "idle"
+  },
+
+  "easing": {
+    "default": "ease_in_out",
+    "entrance": "ease_out",
+    "settle": "ease_in_out"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "store_version": 1,
+  "format": "renix.error_statistics",
+  "description": "Aggregated error and failure statistics for RENIX.",
+  "updated_at": null,
+
+  "configuration": {
+    "track_exceptions": true,
+    "track_modules": true,
+    "track_severity": true,
+    "track_recovery": true,
+    "track_frequency": true,
+    "retain_error_records": true,
+    "retention_days": 3650
+  },
+
+  "totals": {
+    "errors": 0,
+    "warnings": 0,
+    "critical": 0,
+    "recoverable": 0,
+    "unrecoverable": 0
+  },
+
+  "severity": {
+    "debug": 0,
+    "info": 0,
+    "warning": 0,
+    "error": 0,
+    "critical": 0
+  },
+
+  "status": {
+    "new": 0,
+    "acknowledged": 0,
+    "investigating": 0,
+    "resolved": 0,
+    "ignored": 0
+  },
+
+  "by_type": {},
+
+  "by_module": {},
+
+  "by_component": {},
+
+  "by_exception": {},
+
+  "by_command": {},
+
+  "by_agent": {},
+
+  "by_day": {},
+
+  "recovery": {
+    "recovered": 0,
+    "failed_recovery": 0,
+    "average_recovery_time_ms": 0,
+    "recovery_rate": 0
+  },
+
+  "most_frequent": [],
+
+  "recent_errors": [],
+
+  "error_records": [],
+
+  "health": {
+    "error_rate": 0,
+    "critical_error_rate": 0,
+    "recovery_rate": 0,
+    "system_health": "healthy"
+  },
+
+  "integrity": {
+    "record_count": 0,
+    "last_recalculated_at": null,
+    "checksum": null,
+    "healthy": true
+  }
+}

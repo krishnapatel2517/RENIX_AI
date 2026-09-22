@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "store_version": 1,
+  "format": "renix_embedding_collection_store",
+
+  "metadata": {
+    "name": "RENIX Embedding Collections",
+    "description": "Collections used to organize RENIX vector embeddings.",
+    "created_at": null,
+    "updated_at": null,
+    "managed_by": "RENIX Embedding Manager"
+  },
+
+  "configuration": {
+    "enabled": true,
+    "auto_create": true,
+    "auto_update": true,
+    "validate_dimensions": true,
+    "validate_models": true,
+    "allow_empty_collections": true,
+    "soft_delete": true
+  },
+
+  "collection_types": [
+    "memory",
+    "conversation",
+    "document",
+    "project",
+    "task",
+    "research",
+    "knowledge",
+    "code",
+    "custom"
+  ],
+
+  "collections": [],
+
+  "indexes": {
+    "by_id": {},
+    "by_name": {},
+    "by_type": {},
+    "by_model": {},
+    "by_dimension": {},
+    "by_created_at": {},
+    "by_updated_at": {}
+  },
+
+  "statistics": {
+    "total_collections": 0,
+    "active_collections": 0,
+    "deleted_collections": 0,
+    "memory_collections": 0,
+    "conversation_collections": 0,
+    "document_collections": 0,
+    "project_collections": 0,
+    "task_collections": 0,
+    "research_collections": 0,
+    "knowledge_collections": 0,
+    "code_collections": 0,
+    "custom_collections": 0,
+    "total_embeddings": 0
+  }
+}

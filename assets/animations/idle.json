@@ -1,0 +1,77 @@
+{
+  "name": "renix_idle",
+  "version": "1.0",
+  "description": "Continuous idle animation for the RENIX holographic interface.",
+  "loop": true,
+  "duration": 3.0,
+  "fps": 60,
+
+  "keyframes": [
+    {
+      "time": 0.0,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.85,
+      "float": 0.0
+    },
+    {
+      "time": 0.75,
+      "opacity": 0.97,
+      "scale": 1.008,
+      "rotation": 0.12,
+      "glow": 0.95,
+      "float": 2.0
+    },
+    {
+      "time": 1.5,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.85,
+      "float": 0.0
+    },
+    {
+      "time": 2.25,
+      "opacity": 0.97,
+      "scale": 0.992,
+      "rotation": -0.12,
+      "glow": 0.95,
+      "float": -2.0
+    },
+    {
+      "time": 3.0,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.85,
+      "float": 0.0
+    }
+  ],
+
+  "effects": {
+    "breathing": {
+      "enabled": true,
+      "strength": 0.008,
+      "speed": 0.8
+    },
+    "floating": {
+      "enabled": true,
+      "distance": 2.0,
+      "speed": 0.7
+    },
+    "glowPulse": {
+      "enabled": true,
+      "minimum": 0.8,
+      "maximum": 1.0,
+      "speed": 1.2
+    },
+    "flicker": {
+      "enabled": true,
+      "strength": 0.025,
+      "speed": 6.0
+    }
+  },
+
+  "easing": "ease_in_out"
+}

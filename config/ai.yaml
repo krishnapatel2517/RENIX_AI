@@ -1,0 +1,654 @@
+```yaml
+# ============================================================
+# RENIX AI CONFIGURATION
+# ============================================================
+#
+# Central configuration for RENIX's AI systems.
+#
+# This file controls:
+# - LLM providers
+# - Model routing
+# - Generation parameters
+# - Streaming
+# - Context limits
+# - Reasoning
+# - Planning
+# - Tool usage
+# - Fallback behavior
+# - Response generation
+#
+# Secrets/API keys MUST NOT be stored here.
+# Use .env for sensitive credentials.
+# ============================================================
+
+
+# ============================================================
+# SYSTEM
+# ============================================================
+
+system:
+  name: "RENIX"
+
+  version: "1.0.0"
+
+  environment: "development"
+
+  debug: true
+
+  language: "auto"
+
+  default_language: "en"
+
+  timezone: "Asia/Kolkata"
+
+
+# ============================================================
+# ASSISTANT
+# ============================================================
+
+assistant:
+  name: "RENIX"
+
+  identity:
+    role: "personal_ai_assistant"
+
+    description: >
+      RENIX is a general-purpose intelligent personal assistant
+      designed to understand natural language, reason about
+      problems, plan tasks, use tools, interact with the computer,
+      manage information, and communicate naturally.
+
+  behavior:
+    proactive: true
+
+    conversational: true
+
+    context_aware: true
+
+    memory_aware: true
+
+    tool_aware: true
+
+    clarification_enabled: true
+
+    confirmation_for_risky_actions: true
+
+
+# ============================================================
+# DEFAULT LLM
+# ============================================================
+
+llm:
+  enabled: true
+
+  provider: "auto"
+
+  model: "auto"
+
+  temperature: 0.7
+
+  top_p: 0.9
+
+  top_k: 40
+
+  max_output_tokens: 4096
+
+  presence_penalty: 0.0
+
+  frequency_penalty: 0.0
+
+  stop_sequences: []
+
+  timeout_seconds: 120
+
+  retries: 2
+
+
+# ============================================================
+# PROVIDERS
+# ============================================================
+
+providers:
+
+  openai:
+    enabled: true
+
+    api_key_env: "OPENAI_API_KEY"
+
+    model: "gpt-5.6"
+
+    temperature: 0.7
+
+    max_output_tokens: 4096
+
+    timeout_seconds: 120
+
+
+  google:
+    enabled: true
+
+    api_key_env: "GOOGLE_API_KEY"
+
+    model: "gemini"
+
+    temperature: 0.7
+
+    max_output_tokens: 4096
+
+    timeout_seconds: 120
+
+
+  anthropic:
+    enabled: false
+
+    api_key_env: "ANTHROPIC_API_KEY"
+
+    model: "claude"
+
+    temperature: 0.7
+
+    max_output_tokens: 4096
+
+    timeout_seconds: 120
+
+
+  local:
+    enabled: false
+
+    endpoint: "http://127.0.0.1:11434"
+
+    model: "auto"
+
+    temperature: 0.7
+
+    max_output_tokens: 4096
+
+    timeout_seconds: 180
+
+
+# ============================================================
+# MODEL ROUTING
+# ============================================================
+
+routing:
+
+  strategy: "capability"
+
+  automatic_selection: true
+
+  prefer_fast_models_for:
+    - "simple_question"
+    - "classification"
+    - "intent_detection"
+    - "short_response"
+    - "summarization"
+
+  prefer_reasoning_models_for:
+    - "complex_reasoning"
+    - "planning"
+    - "coding"
+    - "debugging"
+    - "research"
+    - "mathematics"
+    - "decision_support"
+
+  prefer_vision_models_for:
+    - "image_analysis"
+    - "screen_analysis"
+    - "document_analysis"
+    - "ocr"
+    - "object_detection"
+
+  prefer_local_models_for:
+    - "offline_tasks"
+    - "private_processing"
+    - "low_latency_tasks"
+
+  fallback_enabled: true
+
+
+# ============================================================
+# STREAMING
+# ============================================================
+
+streaming:
+
+  enabled: true
+
+  chunk_size: 1
+
+  flush_interval_ms: 30
+
+  show_partial_responses: true
+
+  allow_interruption: true
+
+  preserve_partial_response: true
+
+
+# ============================================================
+# CONTEXT
+# ============================================================
+
+context:
+
+  enabled: true
+
+  max_context_tokens: 32768
+
+  reserve_output_tokens: 4096
+
+  include_system_context: true
+
+  include_conversation_history: true
+
+  include_memory: true
+
+  include_current_task: true
+
+  include_environment: true
+
+  include_user_preferences: true
+
+  include_recent_events: true
+
+  history:
+    enabled: true
+
+    max_messages: 100
+
+    summarize_old_messages: true
+
+    summary_threshold: 80
+
+
+# ============================================================
+# MEMORY INTEGRATION
+# ============================================================
+
+memory:
+
+  enabled: true
+
+  automatic_retrieval: true
+
+  automatic_storage: true
+
+  retrieval_limit: 10
+
+  minimum_relevance: 0.65
+
+  use_short_term_memory: true
+
+  use_long_term_memory: true
+
+  use_episodic_memory: true
+
+  use_semantic_memory: true
+
+  use_project_memory: true
+
+  use_preference_memory: true
+
+  privacy_aware: true
+
+
+# ============================================================
+# REASONING
+# ============================================================
+
+reasoning:
+
+  enabled: true
+
+  mode: "adaptive"
+
+  depth: "adaptive"
+
+  maximum_depth: 8
+
+  self_verification: true
+
+  contradiction_detection: true
+
+  uncertainty_detection: true
+
+  assumption_detection: true
+
+  fact_checking: true
+
+  confidence_tracking: true
+
+  retry_on_low_confidence: true
+
+  minimum_confidence: 0.65
+
+
+# ============================================================
+# PLANNING
+# ============================================================
+
+planning:
+
+  enabled: true
+
+  automatic_task_decomposition: true
+
+  maximum_steps: 25
+
+  allow_parallel_steps: true
+
+  dependency_detection: true
+
+  progress_tracking: true
+
+  dynamic_replanning: true
+
+  failure_recovery: true
+
+
+# ============================================================
+# TOOL USE
+# ============================================================
+
+tools:
+
+  enabled: true
+
+  automatic_tool_selection: true
+
+  maximum_tool_calls_per_task: 50
+
+  parallel_execution: true
+
+  require_confirmation_for_sensitive_actions: true
+
+  require_confirmation_for:
+    - "delete_files"
+    - "send_messages"
+    - "send_emails"
+    - "financial_transactions"
+    - "system_shutdown"
+    - "system_restart"
+    - "security_changes"
+    - "credential_changes"
+    - "external_account_changes"
+
+  tool_timeout_seconds: 120
+
+  retry_failed_tools: true
+
+  maximum_tool_retries: 2
+
+
+# ============================================================
+# COMPUTER CONTROL
+# ============================================================
+
+computer_control:
+
+  enabled: true
+
+  mouse_control: true
+
+  keyboard_control: true
+
+  window_control: true
+
+  application_control: true
+
+  clipboard_access: true
+
+  screenshot_access: true
+
+  filesystem_access: true
+
+  terminal_access: true
+
+  browser_access: true
+
+  confirmation_required_for_destructive_actions: true
+
+
+# ============================================================
+# CODE GENERATION
+# ============================================================
+
+coding:
+
+  enabled: true
+
+  supported_languages:
+    - "python"
+    - "javascript"
+    - "typescript"
+    - "java"
+    - "c"
+    - "cpp"
+    - "csharp"
+    - "go"
+    - "rust"
+    - "html"
+    - "css"
+    - "sql"
+    - "yaml"
+    - "json"
+    - "bash"
+    - "powershell"
+
+  automatic_code_analysis: true
+
+  automatic_error_analysis: true
+
+  automatic_testing: true
+
+  automatic_debugging: true
+
+  syntax_validation: true
+
+  dependency_analysis: true
+
+  security_analysis: true
+
+
+# ============================================================
+# RESEARCH
+# ============================================================
+
+research:
+
+  enabled: true
+
+  web_search: true
+
+  source_verification: true
+
+  source_ranking: true
+
+  fact_checking: true
+
+  citation_generation: true
+
+  cross_source_comparison: true
+
+  minimum_sources_for_deep_research: 3
+
+  maximum_sources: 20
+
+
+# ============================================================
+# RESPONSE GENERATION
+# ============================================================
+
+response:
+
+  style: "natural"
+
+  default_length: "adaptive"
+
+  markdown: true
+
+  structured_answers: true
+
+  use_lists: true
+
+  use_tables_when_useful: true
+
+  avoid_unnecessary_repetition: true
+
+  explain_when_needed: true
+
+  acknowledge_uncertainty: true
+
+  never_fake_information: true
+
+
+# ============================================================
+# PERSONALITY
+# ============================================================
+
+personality:
+
+  enabled: true
+
+  mode: "adaptive"
+
+  warmth: 0.75
+
+  humor: 0.55
+
+  enthusiasm: 0.70
+
+  formality: 0.35
+
+  directness: 0.80
+
+  empathy: 0.80
+
+  verbosity: 0.55
+
+  adapt_to_user: true
+
+
+# ============================================================
+# MULTILINGUAL
+# ============================================================
+
+languages:
+
+  automatic_detection: true
+
+  supported:
+    - "English"
+    - "Hindi"
+    - "Hinglish"
+    - "Gujarati"
+    - "Marathi"
+    - "Sanskrit"
+    - "Tamil"
+    - "Telugu"
+    - "Bengali"
+    - "Kannada"
+    - "Malayalam"
+    - "Punjabi"
+    - "Urdu"
+
+  preserve_user_language: true
+
+  code_switching: true
+
+  transliteration_support: true
+
+
+# ============================================================
+# SAFETY
+# ============================================================
+
+safety:
+
+  enabled: true
+
+  command_safety_checks: true
+
+  malicious_instruction_detection: true
+
+  prompt_injection_detection: true
+
+  sensitive_action_confirmation: true
+
+  privacy_protection: true
+
+  secret_detection: true
+
+  unsafe_tool_execution_blocked: true
+
+
+# ============================================================
+# PERFORMANCE
+# ============================================================
+
+performance:
+
+  cache_enabled: true
+
+  response_cache: true
+
+  model_cache: true
+
+  context_cache: true
+
+  parallel_processing: true
+
+  asynchronous_tasks: true
+
+  maximum_concurrent_tasks: 8
+
+
+# ============================================================
+# LOGGING
+# ============================================================
+
+logging:
+
+  enabled: true
+
+  level: "INFO"
+
+  log_requests: false
+
+  log_responses: false
+
+  log_tool_calls: true
+
+  log_errors: true
+
+  log_model_selection: true
+
+  redact_secrets: true
+
+  redact_sensitive_data: true
+
+
+# ============================================================
+# DEVELOPMENT
+# ============================================================
+
+development:
+
+  debug_mode: true
+
+  verbose_errors: true
+
+  mock_external_services: false
+
+  mock_llm: false
+
+  enable_test_commands: true
+
+  profiling: false
+
+
+# ============================================================
+# END OF AI CONFIGURATION
+# ============================================================
+```

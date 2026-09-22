@@ -1,0 +1,124 @@
+{
+  "name": "renix_panel_close",
+  "version": "1.0",
+  "description": "Holographic panel closing animation for RENIX.",
+  "loop": false,
+  "duration": 1.0,
+  "fps": 60,
+
+  "keyframes": [
+    {
+      "time": 0.0,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "x": 0.0,
+      "y": 0.0,
+      "rotation": 0.0,
+      "glow": 0.85
+    },
+    {
+      "time": 0.2,
+      "opacity": 1.0,
+      "scale": 1.01,
+      "x": 0.0,
+      "y": -1.0,
+      "rotation": 0.0,
+      "glow": 1.0
+    },
+    {
+      "time": 0.4,
+      "opacity": 0.85,
+      "scale": 0.94,
+      "x": 0.0,
+      "y": -2.0,
+      "rotation": 0.0,
+      "glow": 0.7
+    },
+    {
+      "time": 0.6,
+      "opacity": 0.6,
+      "scale": 0.86,
+      "x": 0.0,
+      "y": -4.0,
+      "rotation": 0.0,
+      "glow": 0.5
+    },
+    {
+      "time": 0.8,
+      "opacity": 0.3,
+      "scale": 0.76,
+      "x": 0.0,
+      "y": -6.0,
+      "rotation": 0.0,
+      "glow": 0.25
+    },
+    {
+      "time": 1.0,
+      "opacity": 0.0,
+      "scale": 0.65,
+      "x": 0.0,
+      "y": -8.0,
+      "rotation": 0.0,
+      "glow": 0.0
+    }
+  ],
+
+  "effects": {
+    "edgeCollapse": {
+      "enabled": true,
+      "direction": "outward_to_center",
+      "duration": 0.65,
+      "intensity": 1.0
+    },
+
+    "glow": {
+      "enabled": true,
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "speed": 2.4
+    },
+
+    "scanline": {
+      "enabled": true,
+      "strength": 0.18,
+      "speed": 2.2
+    },
+
+    "particles": {
+      "enabled": true,
+      "count": 35,
+      "movement": "inward",
+      "speed": 0.9,
+      "radius": 0.9
+    },
+
+    "borderPulse": {
+      "enabled": true,
+      "strength": 0.6,
+      "duration": 0.5,
+      "repeat": 1
+    }
+  },
+
+  "status": {
+    "displayText": "PANEL CLOSE",
+    "showIndicator": true,
+    "indicatorPulse": false
+  },
+
+  "sound": {
+    "enabled": true,
+    "asset": "assets/sounds/panel_close.wav",
+    "volume": 0.35
+  },
+
+  "onComplete": {
+    "nextState": "idle"
+  },
+
+  "easing": {
+    "default": "ease_in_out",
+    "exit": "ease_in",
+    "collapse": "ease_in_out"
+  }
+}

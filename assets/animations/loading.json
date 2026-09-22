@@ -1,0 +1,127 @@
+{
+  "name": "renix_loading",
+  "version": "1.0",
+  "description": "Continuous loading animation for RENIX processing states.",
+  "loop": true,
+  "duration": 2.0,
+  "fps": 60,
+
+  "keyframes": [
+    {
+      "time": 0.0,
+      "opacity": 0.45,
+      "scale": 0.92,
+      "rotation": 0.0,
+      "glow": 0.45,
+      "pulse": 0.2,
+      "progress": 0.0
+    },
+    {
+      "time": 0.4,
+      "opacity": 0.8,
+      "scale": 0.98,
+      "rotation": 90.0,
+      "glow": 0.8,
+      "pulse": 0.6,
+      "progress": 0.25
+    },
+    {
+      "time": 0.8,
+      "opacity": 1.0,
+      "scale": 1.03,
+      "rotation": 180.0,
+      "glow": 1.05,
+      "pulse": 1.0,
+      "progress": 0.5
+    },
+    {
+      "time": 1.2,
+      "opacity": 0.8,
+      "scale": 0.98,
+      "rotation": 270.0,
+      "glow": 0.8,
+      "pulse": 0.6,
+      "progress": 0.75
+    },
+    {
+      "time": 1.6,
+      "opacity": 0.6,
+      "scale": 0.95,
+      "rotation": 360.0,
+      "glow": 0.6,
+      "pulse": 0.35,
+      "progress": 1.0
+    },
+    {
+      "time": 2.0,
+      "opacity": 0.45,
+      "scale": 0.92,
+      "rotation": 450.0,
+      "glow": 0.45,
+      "pulse": 0.2,
+      "progress": 0.0
+    }
+  ],
+
+  "effects": {
+    "spinner": {
+      "enabled": true,
+      "rotationSpeed": 180.0,
+      "direction": "clockwise",
+      "segments": 12,
+      "radius": 1.0
+    },
+
+    "progressRing": {
+      "enabled": true,
+      "startAngle": -90.0,
+      "endAngle": 270.0,
+      "thickness": 0.06,
+      "progressSpeed": 0.5
+    },
+
+    "glow": {
+      "enabled": true,
+      "minimum": 0.35,
+      "maximum": 1.05,
+      "speed": 2.5
+    },
+
+    "particles": {
+      "enabled": true,
+      "count": 40,
+      "movement": "orbit",
+      "speed": 0.8,
+      "radius": 1.15
+    },
+
+    "scanline": {
+      "enabled": true,
+      "strength": 0.15,
+      "speed": 1.8
+    }
+  },
+
+  "status": {
+    "displayText": "LOADING",
+    "showIndicator": true,
+    "indicatorPulse": true
+  },
+
+  "sound": {
+    "enabled": false,
+    "asset": "assets/sounds/loading.wav",
+    "volume": 0.25,
+    "loop": true
+  },
+
+  "onComplete": {
+    "nextState": "loading"
+  },
+
+  "easing": {
+    "default": "linear",
+    "rotation": "linear",
+    "pulse": "ease_in_out"
+  }
+}

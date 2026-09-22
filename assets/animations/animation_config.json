@@ -1,0 +1,144 @@
+{
+  "name": "RENIX Animation System",
+  "version": "1.0.0",
+
+  "engine": {
+    "enabled": true,
+    "default_fps": 60,
+    "default_duration": 0.5,
+    "loop_idle_animation": true,
+    "interpolation": "ease_in_out"
+  },
+
+  "states": {
+    "startup": "startup.json",
+    "idle": "idle.json",
+    "shutdown": "shutdown.json",
+    "wake_up": "wake_up.json",
+    "listening": "listening.json",
+    "thinking": "thinking.json",
+    "speaking": "speaking.json",
+    "processing": "processing.json",
+    "success": "success.json",
+    "error": "error.json",
+    "warning": "warning.json",
+    "notification": "notification.json",
+    "command": "command.json",
+    "hologram_open": "hologram_open.json",
+    "hologram_close": "hologram_close.json",
+    "panel_open": "panel_open.json",
+    "panel_close": "panel_close.json",
+    "scan": "scan.json",
+    "loading": "loading.json",
+    "pulse": "pulse.json",
+    "rotate": "rotate.json",
+    "zoom": "zoom.json",
+    "gesture_response": "gesture_response.json",
+    "transition": "transition.json"
+  },
+
+  "default_state": "idle",
+
+  "transitions": {
+    "startup": {
+      "next": "idle",
+      "animation": "startup.json"
+    },
+
+    "idle_to_wake": {
+      "from": "idle",
+      "to": "wake_up",
+      "animation": "wake_up.json"
+    },
+
+    "wake_to_listening": {
+      "from": "wake_up",
+      "to": "listening",
+      "animation": "transition.json"
+    },
+
+    "listening_to_thinking": {
+      "from": "listening",
+      "to": "thinking",
+      "animation": "transition.json"
+    },
+
+    "thinking_to_processing": {
+      "from": "thinking",
+      "to": "processing",
+      "animation": "transition.json"
+    },
+
+    "processing_to_speaking": {
+      "from": "processing",
+      "to": "speaking",
+      "animation": "transition.json"
+    },
+
+    "speaking_to_idle": {
+      "from": "speaking",
+      "to": "idle",
+      "animation": "transition.json"
+    },
+
+    "error_to_idle": {
+      "from": "error",
+      "to": "idle",
+      "animation": "transition.json"
+    },
+
+    "shutdown": {
+      "next": "closed",
+      "animation": "shutdown.json"
+    }
+  },
+
+  "effects": {
+    "glow": {
+      "enabled": true,
+      "default_strength": 0.85
+    },
+
+    "scanlines": {
+      "enabled": true,
+      "default_strength": 0.25
+    },
+
+    "glitch": {
+      "enabled": true,
+      "default_strength": 0.12
+    },
+
+    "particles": {
+      "enabled": true,
+      "default_intensity": 0.5
+    },
+
+    "floating": {
+      "enabled": true,
+      "default_distance": 2.0
+    }
+  },
+
+  "performance": {
+    "max_particles": 5000,
+    "max_simultaneous_animations": 32,
+    "adaptive_quality": true,
+    "reduce_effects_on_low_fps": true,
+    "target_fps": 60,
+    "minimum_fps": 30
+  },
+
+  "priority": {
+    "error": 100,
+    "warning": 90,
+    "notification": 80,
+    "command": 70,
+    "gesture_response": 65,
+    "speaking": 60,
+    "thinking": 50,
+    "processing": 45,
+    "listening": 40,
+    "idle": 10
+  }
+}

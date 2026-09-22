@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "store_version": 1,
+  "format": "renix.daily_statistics",
+  "description": "Day-by-day aggregated RENIX activity statistics.",
+  "updated_at": null,
+
+  "configuration": {
+    "timezone": "Asia/Kolkata",
+    "track_commands": true,
+    "track_conversations": true,
+    "track_tasks": true,
+    "track_errors": true,
+    "track_usage": true,
+    "retention_days": 3650
+  },
+
+  "current_day": {
+    "date": null,
+    "commands": 0,
+    "successful_commands": 0,
+    "failed_commands": 0,
+    "conversations": 0,
+    "messages": 0,
+    "tasks_created": 0,
+    "tasks_completed": 0,
+    "tasks_failed": 0,
+    "errors": 0,
+    "active_time_seconds": 0,
+    "total_execution_time_ms": 0
+  },
+
+  "days": {},
+
+  "weekly": {},
+
+  "monthly": {},
+
+  "yearly": {},
+
+  "records": [],
+
+  "trend": {
+    "commands": "stable",
+    "conversations": "stable",
+    "tasks": "stable",
+    "errors": "stable",
+    "overall": "stable"
+  },
+
+  "comparisons": {
+    "today_vs_yesterday": {
+      "commands_change": 0,
+      "conversations_change": 0,
+      "tasks_change": 0,
+      "errors_change": 0
+    },
+    "week_vs_previous_week": {
+      "commands_change": 0,
+      "conversations_change": 0,
+      "tasks_change": 0,
+      "errors_change": 0
+    },
+    "month_vs_previous_month": {
+      "commands_change": 0,
+      "conversations_change": 0,
+      "tasks_change": 0,
+      "errors_change": 0
+    }
+  },
+
+  "peak_activity": {
+    "date": null,
+    "commands": 0,
+    "conversations": 0,
+    "tasks": 0
+  },
+
+  "integrity": {
+    "record_count": 0,
+    "last_recalculated_at": null,
+    "checksum": null,
+    "healthy": true
+  }
+}

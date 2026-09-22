@@ -1,0 +1,128 @@
+name: coding
+version: "1.0"
+
+description: >
+  RENIX coding workflow for preparing a development environment,
+  opening a project, starting developer tools, and enabling a
+  focused coding session.
+
+enabled: true
+
+variables:
+  project_path: ""
+  focus_mode: true
+  terminal_enabled: true
+  editor_enabled: true
+  notifications_enabled: false
+  smart_home_enabled: false
+
+triggers:
+  - type: manual
+    name: start_coding
+
+steps:
+
+  - id: initialize
+    type: system
+    action: initialize
+    continue_on_error: true
+
+  - id: announce
+    type: assistant
+    action: speak
+    data:
+      message: >
+        Coding mode activated. RENIX is preparing your development environment.
+    continue_on_error: true
+
+  - id: validate_project
+    type: condition
+    condition: "${project_path} != ''"
+    then:
+
+      - id: open_project
+        type: coding
+        action: open_project
+        data:
+          path: "${project_path}"
+        save_as: project
+        continue_on_error: false
+
+      - id: project_status
+        type: coding
+        action: analyze_project
+        data:
+          path: "${project_path}"
+        save_as: project_status
+        continue_on_error: true
+
+  - id: enable_focus
+    type: condition
+    condition: "${focus_mode} == true"
+    then:
+
+      - id: focus
+        type: system
+        action: enable_focus_mode
+        continue_on_error: true
+
+      - id: notifications
+        type: notifications
+        action: disable
+        continue_on_error: true
+
+  - id: terminal
+    type: condition
+    condition: "${terminal_enabled} == true"
+    then:
+
+      - id: open_terminal
+        type: computer
+        action: open_terminal
+        continue_on_error: true
+
+  - id: editor
+    type: condition
+    condition: "${editor_enabled} == true"
+    then:
+
+      - id: open_editor
+        type: coding
+        action: open_editor
+        data:
+          project_path: "${project_path}"
+        continue_on_error: true
+
+  - id: smart_environment
+    type: condition
+    condition: "${smart_home_enabled} == true"
+    then:
+
+      - id: coding_lights
+        type: smart_home
+        action: set_lights
+        data:
+          state: "on"
+          brightness: 60
+        continue_on_error: true
+
+  - id: git_status
+    type: condition
+    condition: "${project_path} != ''"
+    then:
+
+      - id: check_git
+        type: coding
+        action: git_status
+        data:
+          path: "${project_path}"
+        save_as: git_status
+        continue_on_error: true
+
+  - id: ready
+    type: assistant
+    action: speak
+    data:
+      message: >
+        Your coding environment is ready. RENIX is standing by.
+    continue_on_error: true

@@ -1,0 +1,350 @@
+```yaml
+# ============================================================
+# RENIX VOICE CONFIGURATION
+# ============================================================
+
+system:
+  enabled: true
+  default_language: "auto"
+  fallback_language: "en"
+  timezone: "Asia/Kolkata"
+
+microphone:
+  enabled: true
+  device: "default"
+  sample_rate: 16000
+  channels: 1
+  chunk_size: 1024
+  buffer_size: 4096
+  input_gain: 1.0
+  auto_gain_control: true
+
+speech_to_text:
+  enabled: true
+
+  provider: "auto"
+
+  model: "auto"
+
+  language: "auto"
+
+  translate_to_english: false
+
+  continuous_listening: true
+
+  partial_results: true
+
+  final_results: true
+
+  punctuation: true
+
+  capitalization: true
+
+  profanity_filter: false
+
+  confidence_threshold: 0.55
+
+  timeout_seconds: 10
+
+  max_phrase_duration_seconds: 30
+
+  silence_timeout_seconds: 1.2
+
+  retry_count: 2
+
+text_to_speech:
+  enabled: true
+
+  provider: "auto"
+
+  voice: "default"
+
+  language: "auto"
+
+  speaking_rate: 1.0
+
+  pitch: 1.0
+
+  volume: 1.0
+
+  emotion: "neutral"
+
+  sentence_pause_ms: 180
+
+  paragraph_pause_ms: 350
+
+  stream_audio: true
+
+  interruptible: true
+
+  cache_audio: true
+
+wake_word:
+  enabled: true
+
+  words:
+    - "renix"
+    - "hey renix"
+    - "okay renix"
+
+  sensitivity: 0.65
+
+  confidence_threshold: 0.70
+
+  cooldown_seconds: 1.5
+
+  continuous_detection: true
+
+  require_confirmation_after_wake: false
+
+clap_detector:
+  enabled: true
+
+  required_claps: 2
+
+  detection_window_seconds: 1.5
+
+  sensitivity: 0.70
+
+  minimum_clap_interval_ms: 120
+
+  maximum_clap_interval_ms: 900
+
+  cooldown_seconds: 3
+
+  false_positive_protection: true
+
+voice_authentication:
+  enabled: false
+
+  provider: "local"
+
+  confidence_threshold: 0.80
+
+  enrollment_required: true
+
+  max_enrolled_voices: 5
+
+  retry_attempts: 3
+
+  timeout_seconds: 5
+
+speaker_identification:
+  enabled: false
+
+  confidence_threshold: 0.75
+
+  unknown_speaker_action: "continue"
+
+  remember_speakers: true
+
+noise_cancellation:
+  enabled: true
+
+  mode: "adaptive"
+
+  strength: 0.75
+
+  echo_cancellation: true
+
+  dereverberation: true
+
+  background_noise_reduction: true
+
+  voice_activity_detection: true
+
+audio_processing:
+  enabled: true
+
+  normalize_audio: true
+
+  remove_dc_offset: true
+
+  high_pass_filter: true
+
+  low_pass_filter: true
+
+  automatic_gain_control: true
+
+  voice_activity_detection: true
+
+  minimum_voice_level: 0.02
+
+  silence_detection_duration_ms: 700
+
+conversation_mode:
+  enabled: true
+
+  default_mode: "normal"
+
+  modes:
+    normal:
+      continuous_listening: false
+      interruption: true
+      wake_word_required: true
+
+    continuous:
+      continuous_listening: true
+      interruption: true
+      wake_word_required: false
+
+    hands_free:
+      continuous_listening: true
+      interruption: true
+      wake_word_required: false
+
+    silent:
+      continuous_listening: false
+      interruption: false
+      wake_word_required: true
+
+  auto_return_to_normal: true
+
+  inactivity_timeout_seconds: 30
+
+interruption:
+  enabled: true
+
+  detect_user_speech: true
+
+  stop_tts_on_interruption: true
+
+  preserve_interrupted_response: true
+
+  resume_after_interruption: false
+
+  interruption_threshold: 0.45
+
+  minimum_interruption_duration_ms: 250
+
+language_detection:
+  enabled: true
+
+  automatic: true
+
+  minimum_confidence: 0.65
+
+  detection_sample_seconds: 3
+
+  supported_languages:
+    - "en"
+    - "hi"
+    - "gu"
+    - "mr"
+    - "sa"
+    - "ta"
+    - "te"
+    - "bn"
+    - "kn"
+    - "ml"
+    - "pa"
+    - "ur"
+
+  hinglish_detection: true
+
+  code_switching: true
+
+voice_profiles:
+  enabled: true
+
+  directory: "voice/voices"
+
+  default_profile: "default"
+
+  adaptive_emotion: true
+
+  profiles:
+    default:
+      gender: "neutral"
+      style: "natural"
+      speed: 1.0
+      pitch: 1.0
+
+    friendly:
+      style: "warm"
+      speed: 1.0
+      pitch: 1.02
+
+    professional:
+      style: "professional"
+      speed: 0.95
+      pitch: 1.0
+
+    energetic:
+      style: "energetic"
+      speed: 1.08
+      pitch: 1.04
+
+    calm:
+      style: "calm"
+      speed: 0.90
+      pitch: 0.98
+
+emotion:
+  enabled: true
+
+  adaptive_voice: true
+
+  detect_user_emotion: true
+
+  emotion_response_mapping:
+    happy: "energetic"
+    excited: "energetic"
+    neutral: "friendly"
+    sad: "calm"
+    frustrated: "calm"
+    angry: "calm"
+    confused: "friendly"
+    stressed: "calm"
+
+performance:
+  asynchronous_audio: true
+
+  audio_queue_size: 20
+
+  maximum_concurrent_audio_tasks: 2
+
+  prewarm_models: true
+
+  cache_models: true
+
+  cache_transcriptions: false
+
+  cache_speech: true
+
+timeouts:
+  microphone_start_seconds: 5
+  speech_recognition_seconds: 15
+  text_to_speech_seconds: 30
+  voice_authentication_seconds: 10
+  wake_word_seconds: 3
+
+security:
+  redact_audio_logs: true
+  store_raw_audio: false
+  store_transcriptions: true
+  encrypt_stored_audio: true
+  encrypt_voice_profiles: true
+  require_authentication_for_sensitive_commands: true
+
+logging:
+  enabled: true
+  level: "INFO"
+  log_transcriptions: false
+  log_voice_events: true
+  log_errors: true
+  log_device_changes: true
+  redact_sensitive_content: true
+
+development:
+  debug: true
+  test_microphone: false
+  test_speaker: false
+  mock_stt: false
+  mock_tts: false
+  verbose_audio_logs: false
+
+# ============================================================
+# END OF VOICE CONFIGURATION
+# ============================================================
+```

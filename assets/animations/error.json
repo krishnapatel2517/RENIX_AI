@@ -1,0 +1,142 @@
+{
+  "name": "renix_error",
+  "version": "1.0",
+  "description": "Error animation displayed when RENIX encounters a failed operation or unexpected condition.",
+  "loop": false,
+  "duration": 1.5,
+  "fps": 60,
+
+  "keyframes": [
+    {
+      "time": 0.0,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.8,
+      "shake": 0.0,
+      "flicker": 0.0
+    },
+    {
+      "time": 0.15,
+      "opacity": 1.0,
+      "scale": 1.04,
+      "rotation": -1.5,
+      "glow": 1.15,
+      "shake": 1.0,
+      "flicker": 0.8
+    },
+    {
+      "time": 0.3,
+      "opacity": 0.85,
+      "scale": 0.98,
+      "rotation": 1.5,
+      "glow": 0.9,
+      "shake": -1.0,
+      "flicker": 1.0
+    },
+    {
+      "time": 0.45,
+      "opacity": 1.0,
+      "scale": 1.03,
+      "rotation": -1.0,
+      "glow": 1.1,
+      "shake": 0.7,
+      "flicker": 0.7
+    },
+    {
+      "time": 0.65,
+      "opacity": 0.9,
+      "scale": 0.99,
+      "rotation": 0.8,
+      "glow": 0.95,
+      "shake": -0.5,
+      "flicker": 0.5
+    },
+    {
+      "time": 0.9,
+      "opacity": 1.0,
+      "scale": 1.01,
+      "rotation": 0.0,
+      "glow": 0.9,
+      "shake": 0.2,
+      "flicker": 0.2
+    },
+    {
+      "time": 1.5,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.8,
+      "shake": 0.0,
+      "flicker": 0.0
+    }
+  ],
+
+  "effects": {
+    "errorPulse": {
+      "enabled": true,
+      "startTime": 0.1,
+      "duration": 0.8,
+      "strength": 0.9
+    },
+
+    "glitch": {
+      "enabled": true,
+      "startTime": 0.05,
+      "duration": 0.65,
+      "strength": 0.35,
+      "frequency": 8.0
+    },
+
+    "scanline": {
+      "enabled": true,
+      "strength": 0.3,
+      "speed": 3.5
+    },
+
+    "particles": {
+      "enabled": true,
+      "count": 45,
+      "movement": "scatter",
+      "speed": 1.8,
+      "duration": 0.7
+    },
+
+    "warningRing": {
+      "enabled": true,
+      "count": 2,
+      "radius": 1.15,
+      "rotationSpeed": 90.0,
+      "opacity": 0.7
+    },
+
+    "glow": {
+      "enabled": true,
+      "minimum": 0.7,
+      "maximum": 1.15,
+      "speed": 4.0
+    }
+  },
+
+  "status": {
+    "displayText": "ERROR",
+    "showIndicator": true,
+    "indicatorPulse": true
+  },
+
+  "sound": {
+    "enabled": true,
+    "asset": "assets/sounds/error.wav",
+    "volume": 0.55
+  },
+
+  "onComplete": {
+    "nextState": "idle"
+  },
+
+  "easing": {
+    "default": "ease_in_out",
+    "shake": "ease_out",
+    "settle": "ease_in_out"
+  }
+}

@@ -1,0 +1,218 @@
+```yaml
+# ============================================================
+# RENIX SECURITY CONFIGURATION
+# ============================================================
+
+system:
+  enabled: true
+  security_level: "high"
+  secure_by_default: true
+  fail_closed: true
+
+authentication:
+  enabled: true
+  require_authentication_for_sensitive_actions: true
+  session_timeout_minutes: 60
+  maximum_failed_attempts: 5
+  lockout_duration_minutes: 15
+
+face_authentication:
+  enabled: true
+  confidence_threshold: 0.80
+  continuous_verification: false
+  verification_interval_seconds: 30
+  require_liveness_detection: true
+
+voice_authentication:
+  enabled: false
+  confidence_threshold: 0.80
+  continuous_verification: false
+
+permissions:
+  enabled: true
+  default_policy: "deny_sensitive"
+
+  levels:
+    public:
+      read: true
+      write: false
+      execute: false
+
+    user:
+      read: true
+      write: true
+      execute: true
+
+    privileged:
+      read: true
+      write: true
+      execute: true
+      system_control: true
+
+confirmation:
+  enabled: true
+
+  require_confirmation_for:
+    - "delete_file"
+    - "delete_folder"
+    - "format_drive"
+    - "shutdown"
+    - "restart"
+    - "terminate_process"
+    - "send_message"
+    - "send_email"
+    - "financial_transaction"
+    - "change_security_settings"
+    - "change_credentials"
+    - "install_software"
+    - "uninstall_software"
+    - "execute_unknown_command"
+
+  confirmation_timeout_seconds: 30
+  allow_voice_confirmation: true
+  allow_gesture_confirmation: true
+
+command_safety:
+  enabled: true
+  inspect_commands: true
+  detect_destructive_commands: true
+  detect_privilege_escalation: true
+  detect_credential_access: true
+  detect_data_exfiltration: true
+  detect_malicious_scripts: true
+  block_known_dangerous_commands: true
+
+  dangerous_commands:
+    - "format"
+    - "diskpart"
+    - "shutdown"
+    - "reboot"
+    - "del /s"
+    - "rd /s"
+    - "rm -rf"
+    - "mkfs"
+
+sandbox:
+  enabled: true
+  isolate_untrusted_code: true
+  isolate_generated_code: true
+  restrict_network_access: true
+  restrict_filesystem_access: true
+  restrict_process_access: true
+  maximum_execution_time_seconds: 120
+  maximum_memory_mb: 1024
+
+secrets:
+  enabled: true
+  provider: "environment"
+  environment_file: ".env"
+  never_log_secrets: true
+  never_store_plaintext_credentials: true
+  redact_api_keys: true
+  redact_tokens: true
+  redact_passwords: true
+
+privacy:
+  enabled: true
+  local_processing_preferred: true
+  minimize_data_collection: true
+  store_raw_audio: false
+  store_raw_camera_frames: false
+  store_raw_screen_recordings: false
+  anonymize_sensitive_data: true
+  redact_personal_information: true
+
+audit:
+  enabled: true
+  log_authentication: true
+  log_authorization: true
+  log_security_events: true
+  log_sensitive_actions: true
+  log_command_execution: true
+  log_file_operations: true
+  log_configuration_changes: true
+  retain_days: 90
+
+threat_monitor:
+  enabled: true
+  monitor_processes: true
+  monitor_network: true
+  monitor_filesystem: true
+  monitor_configuration: true
+  detect_suspicious_behavior: true
+  alert_on_anomaly: true
+
+secure_mode:
+  enabled: true
+  activation_phrase: "enable secure mode"
+  restrict_sensitive_operations: true
+  require_authentication: true
+  disable_automatic_external_actions: true
+
+emergency_lock:
+  enabled: true
+  activation_phrase: "lock renix"
+  lock_ui: true
+  stop_voice_processing: true
+  stop_gesture_processing: true
+  stop_automation: true
+  terminate_sensitive_tasks: false
+  require_reauthentication: true
+
+network:
+  secure_connections_only: true
+  verify_tls_certificates: true
+  allow_insecure_http: false
+  proxy_enabled: false
+  request_timeout_seconds: 30
+
+external_services:
+  require_authentication: true
+  validate_service_identity: true
+  restrict_unknown_services: true
+  allow_dynamic_plugins: false
+
+file_security:
+  protect_system_files: true
+  protect_configuration_files: true
+  protect_security_files: true
+  prevent_unauthorized_deletion: true
+  prevent_unauthorized_modification: true
+  verify_file_permissions: true
+
+plugin_security:
+  enabled: true
+  require_trusted_plugins: true
+  verify_plugin_integrity: true
+  sandbox_plugins: true
+  restrict_plugin_permissions: true
+  allow_runtime_installation: false
+
+automation_security:
+  enabled: true
+  validate_workflows: true
+  validate_actions: true
+  require_confirmation_for_destructive_actions: true
+  prevent_unrestricted_shell_access: true
+  maximum_actions_per_workflow: 100
+
+logging:
+  enabled: true
+  level: "INFO"
+  log_security_events: true
+  log_failed_authentication: true
+  log_permission_denials: true
+  log_command_safety_events: true
+  redact_sensitive_data: true
+
+development:
+  debug: true
+  allow_test_authentication: false
+  allow_security_bypass: false
+  disable_sandbox: false
+  verbose_security_logs: false
+
+# ============================================================
+# END OF SECURITY CONFIGURATION
+# ============================================================
+```

@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0.0",
+  "store_version": 1,
+  "format": "renix.task_statistics",
+  "description": "Aggregated statistics for RENIX task execution and completion.",
+  "updated_at": null,
+
+  "configuration": {
+    "track_created": true,
+    "track_completed": true,
+    "track_failed": true,
+    "track_cancelled": true,
+    "track_duration": true,
+    "track_priority": true,
+    "track_categories": true,
+    "track_agents": true,
+    "retention_days": 3650
+  },
+
+  "totals": {
+    "created": 0,
+    "started": 0,
+    "completed": 0,
+    "failed": 0,
+    "cancelled": 0,
+    "paused": 0,
+    "resumed": 0,
+    "overdue": 0
+  },
+
+  "completion": {
+    "completion_rate": 0,
+    "failure_rate": 0,
+    "cancellation_rate": 0,
+    "overdue_rate": 0
+  },
+
+  "duration": {
+    "total_seconds": 0,
+    "average_seconds": 0,
+    "minimum_seconds": 0,
+    "maximum_seconds": 0,
+    "median_seconds": 0,
+    "p95_seconds": 0
+  },
+
+  "by_status": {
+    "pending": 0,
+    "running": 0,
+    "completed": 0,
+    "failed": 0,
+    "cancelled": 0,
+    "paused": 0,
+    "blocked": 0
+  },
+
+  "by_priority": {
+    "critical": 0,
+    "high": 0,
+    "normal": 0,
+    "low": 0
+  },
+
+  "by_category": {},
+
+  "by_agent": {},
+
+  "by_source": {},
+
+  "by_day": {},
+
+  "recurring": {
+    "total": 0,
+    "completed": 0,
+    "failed": 0,
+    "missed": 0
+  },
+
+  "dependencies": {
+    "tasks_with_dependencies": 0,
+    "blocked_tasks": 0,
+    "dependency_failures": 0
+  },
+
+  "top_tasks": [],
+
+  "recent_results": [],
+
+  "productivity": {
+    "tasks_per_day": 0,
+    "tasks_per_hour": 0,
+    "average_completion_time_seconds": 0,
+    "best_day": null,
+    "best_day_completed": 0
+  },
+
+  "integrity": {
+    "record_count": 0,
+    "last_recalculated_at": null,
+    "checksum": null,
+    "healthy": true
+  }
+}

@@ -1,0 +1,653 @@
+```yaml id="b7m4q2"
+# ============================================================
+# RENIX UI CONFIGURATION
+# ============================================================
+
+system:
+  enabled: true
+  name: "RENIX"
+  version: "1.0.0"
+
+  render_backend: "auto"
+
+  fullscreen: true
+
+  borderless: true
+
+  resizable: true
+
+  target_fps: 60
+
+  maximum_fps: 120
+
+  vsync: true
+
+  hardware_acceleration: true
+
+  adaptive_quality: true
+
+
+# ============================================================
+# WINDOW
+# ============================================================
+
+window:
+  title: "RENIX"
+
+  width: 1920
+
+  height: 1080
+
+  minimum_width: 1024
+
+  minimum_height: 600
+
+  fullscreen: true
+
+  borderless: true
+
+  always_on_top: false
+
+  transparent: true
+
+  click_through: false
+
+  resizable: true
+
+  remember_position: true
+
+  remember_size: true
+
+  start_maximized: true
+
+
+# ============================================================
+# HOLOGRAPHIC DISPLAY
+# ============================================================
+
+holographic:
+  enabled: true
+
+  mode: "desktop"
+
+  projection_style: "holographic"
+
+  depth_effect: true
+
+  parallax: true
+
+  glow: true
+
+  bloom: true
+
+  scanlines: true
+
+  grid: true
+
+  particles: true
+
+  volumetric_effects: true
+
+  reflections: true
+
+  shadows: true
+
+  glass_effect: true
+
+  transparency: 0.88
+
+  depth_strength: 0.75
+
+  glow_strength: 0.80
+
+  bloom_strength: 0.65
+
+
+# ============================================================
+# THEME
+# ============================================================
+
+theme:
+  default: "renix"
+
+  available:
+    - "renix"
+    - "hud"
+
+  automatic_theme_switching: false
+
+  follow_system_theme: false
+
+  accent_color: "#00FF88"
+
+  secondary_color: "#00CFFF"
+
+  background_color: "#020608"
+
+  text_color: "#E8FFF5"
+
+  muted_text_color: "#82A89A"
+
+  error_color: "#FF4D6D"
+
+  warning_color: "#FFD166"
+
+  success_color: "#00FF88"
+
+  info_color: "#00CFFF"
+
+
+# ============================================================
+# HUD
+# ============================================================
+
+hud:
+  enabled: true
+
+  position: "screen"
+
+  opacity: 0.92
+
+  scale: 1.0
+
+  show_clock: true
+
+  show_system_status: true
+
+  show_cpu: true
+
+  show_gpu: true
+
+  show_ram: true
+
+  show_network: true
+
+  show_battery: true
+
+  show_weather: true
+
+  show_calendar: true
+
+  show_tasks: true
+
+  show_media: true
+
+  show_notifications: true
+
+  show_assistant_status: true
+
+  auto_hide: false
+
+  auto_hide_delay_seconds: 5
+
+
+# ============================================================
+# ASSISTANT CORE UI
+# ============================================================
+
+assistant:
+  enabled: true
+
+  show_avatar: true
+
+  show_name: true
+
+  show_status: true
+
+  show_listening_indicator: true
+
+  show_processing_indicator: true
+
+  show_speaking_indicator: true
+
+  show_thinking_indicator: true
+
+  show_error_indicator: true
+
+  show_confidence: false
+
+  show_response_text: true
+
+  response_text_animation: "typewriter"
+
+  response_speed: 35
+
+  maximum_visible_messages: 8
+
+
+# ============================================================
+# COMMAND UI
+# ============================================================
+
+command:
+  enabled: true
+
+  input_mode: "voice_and_gesture"
+
+  text_input_enabled: true
+
+  voice_input_enabled: true
+
+  gesture_input_enabled: true
+
+  show_input_box: true
+
+  show_command_history: true
+
+  maximum_history: 50
+
+  autocomplete: true
+
+  suggestions: true
+
+  suggestion_limit: 6
+
+  command_animation: true
+
+
+# ============================================================
+# GESTURE INTERFACE
+# ============================================================
+
+gesture:
+  enabled: true
+
+  show_cursor: true
+
+  show_hand_tracking: false
+
+  show_gesture_label: true
+
+  show_gesture_confidence: false
+
+  cursor_style: "holographic"
+
+  cursor_size: 18
+
+  cursor_glow: true
+
+  cursor_trail: true
+
+  cursor_trail_length: 12
+
+  selection_effect: true
+
+  pinch_effect: true
+
+  grab_effect: true
+
+  swipe_effect: true
+
+  zoom_effect: true
+
+  rotation_effect: true
+
+
+# ============================================================
+# VOICE INTERFACE
+# ============================================================
+
+voice:
+  enabled: true
+
+  show_waveform: true
+
+  waveform_style: "radial"
+
+  waveform_segments: 64
+
+  waveform_sensitivity: 1.0
+
+  show_microphone_status: true
+
+  show_wake_word_status: true
+
+  show_transcription: true
+
+  transcription_position: "bottom"
+
+  animated_listening_ring: true
+
+
+# ============================================================
+# WIDGETS
+# ============================================================
+
+widgets:
+  enabled: true
+
+  draggable: true
+
+  resizable: true
+
+  scalable: true
+
+  rotatable: true
+
+  collapsible: true
+
+  closable: true
+
+  snap_to_grid: true
+
+  grid_size: 20
+
+  remember_positions: true
+
+  remember_sizes: true
+
+  animation_enabled: true
+
+  default_scale: 1.0
+
+  minimum_scale: 0.5
+
+  maximum_scale: 3.0
+
+  spacing: 12
+
+
+# ============================================================
+# WIDGET DEFAULTS
+# ============================================================
+
+widget_defaults:
+  background_opacity: 0.18
+
+  border_opacity: 0.60
+
+  border_width: 1
+
+  corner_radius: 14
+
+  shadow: true
+
+  glow: true
+
+  padding: 12
+
+  animation_duration_ms: 250
+
+  refresh_interval_ms: 1000
+
+
+# ============================================================
+# FILE UI
+# ============================================================
+
+file_ui:
+  enabled: true
+
+  show_file_browser: true
+
+  show_file_preview: true
+
+  show_file_icons: true
+
+  show_file_metadata: true
+
+  drag_and_drop: true
+
+  gesture_drag: true
+
+  pinch_select: true
+
+  grab_move: true
+
+  preview_on_hover: true
+
+  double_click_to_open: true
+
+  confirmation_before_delete: true
+
+
+# ============================================================
+# BROWSER UI
+# ============================================================
+
+browser_ui:
+  enabled: true
+
+  show_tabs: true
+
+  show_address_bar: true
+
+  show_navigation_controls: true
+
+  show_bookmarks: true
+
+  show_downloads: true
+
+  gesture_navigation: true
+
+  voice_navigation: true
+
+  floating_windows: true
+
+
+# ============================================================
+# TERMINAL UI
+# ============================================================
+
+terminal_ui:
+  enabled: true
+
+  transparent: true
+
+  opacity: 0.90
+
+  font_size: 14
+
+  show_command_history: true
+
+  autocomplete: true
+
+  syntax_highlighting: true
+
+  command_animation: true
+
+  gesture_scrolling: true
+
+
+# ============================================================
+# SETTINGS UI
+# ============================================================
+
+settings_ui:
+  enabled: true
+
+  categorized: true
+
+  searchable: true
+
+  animated: true
+
+  live_preview: true
+
+  show_advanced_settings: true
+
+  require_confirmation_for_sensitive_settings: true
+
+
+# ============================================================
+# NOTIFICATIONS
+# ============================================================
+
+notifications:
+  enabled: true
+
+  position: "top_right"
+
+  maximum_visible: 5
+
+  duration_seconds: 5
+
+  animations: true
+
+  sound: true
+
+  vibration: false
+
+  priority_colors: true
+
+  stack_notifications: true
+
+  allow_interaction: true
+
+
+# ============================================================
+# ANIMATIONS
+# ============================================================
+
+animations:
+  enabled: true
+
+  global_speed: 1.0
+
+  reduced_motion: false
+
+  easing: "ease_out_cubic"
+
+  window_open: "scale_fade"
+
+  window_close: "scale_fade"
+
+  widget_open: "fade_slide"
+
+  widget_close: "fade_slide"
+
+  hover: "glow"
+
+  click: "pulse"
+
+  selection: "ring"
+
+  notification: "slide"
+
+  page_transition: "fade"
+
+
+# ============================================================
+# PARTICLES
+# ============================================================
+
+particles:
+  enabled: true
+
+  maximum_particles: 1000
+
+  ambient_particles: 150
+
+  interaction_particles: true
+
+  gesture_particles: true
+
+  voice_particles: true
+
+  notification_particles: true
+
+  performance_adaptive: true
+
+  particle_size: 2.0
+
+  particle_speed: 0.5
+
+
+# ============================================================
+# PERFORMANCE
+# ============================================================
+
+performance:
+  render_threads: 2
+
+  ui_threads: 1
+
+  asset_preloading: true
+
+  lazy_loading: true
+
+  texture_caching: true
+
+  shader_caching: true
+
+  animation_caching: true
+
+  reduce_effects_on_low_fps: true
+
+  low_fps_threshold: 30
+
+  disable_particles_on_low_fps: true
+
+  disable_bloom_on_low_fps: true
+
+
+# ============================================================
+# ACCESSIBILITY
+# ============================================================
+
+accessibility:
+  enabled: true
+
+  high_contrast: false
+
+  large_text: false
+
+  reduce_motion: false
+
+  keyboard_navigation: true
+
+  voice_navigation: true
+
+  screen_reader_support: true
+
+  scalable_ui: true
+
+
+# ============================================================
+# DEBUG
+# ============================================================
+
+debug:
+  enabled: true
+
+  show_fps: true
+
+  show_frame_time: false
+
+  show_render_stats: false
+
+  show_widget_bounds: false
+
+  show_mouse_coordinates: false
+
+  show_gesture_coordinates: false
+
+  show_ui_events: false
+
+  show_debug_overlay: false
+
+
+# ============================================================
+# LOGGING
+# ============================================================
+
+logging:
+  enabled: true
+
+  level: "INFO"
+
+  log_ui_events: false
+
+  log_widget_events: false
+
+  log_window_events: true
+
+  log_render_errors: true
+
+  log_performance: true
+
+
+# ============================================================
+# END OF UI CONFIGURATION
+# ============================================================
+```

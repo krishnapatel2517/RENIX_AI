@@ -1,0 +1,151 @@
+{
+  "name": "renix_gesture_response",
+  "version": "1.0",
+  "description": "Visual feedback animation triggered when RENIX recognizes a hand gesture.",
+  "loop": false,
+  "duration": 0.9,
+  "fps": 60,
+
+  "keyframes": [
+    {
+      "time": 0.0,
+      "opacity": 0.0,
+      "scale": 0.9,
+      "rotation": 0.0,
+      "glow": 0.2,
+      "pulse": 0.0,
+      "responseStrength": 0.0
+    },
+    {
+      "time": 0.12,
+      "opacity": 0.55,
+      "scale": 0.96,
+      "rotation": 0.0,
+      "glow": 0.65,
+      "pulse": 0.4,
+      "responseStrength": 0.35
+    },
+    {
+      "time": 0.28,
+      "opacity": 1.0,
+      "scale": 1.05,
+      "rotation": 0.0,
+      "glow": 1.1,
+      "pulse": 1.0,
+      "responseStrength": 0.8
+    },
+    {
+      "time": 0.45,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.9,
+      "pulse": 0.55,
+      "responseStrength": 1.0
+    },
+    {
+      "time": 0.65,
+      "opacity": 0.95,
+      "scale": 1.015,
+      "rotation": 0.0,
+      "glow": 0.85,
+      "pulse": 0.4,
+      "responseStrength": 0.65
+    },
+    {
+      "time": 0.9,
+      "opacity": 0.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.0,
+      "pulse": 0.0,
+      "responseStrength": 0.0
+    }
+  ],
+
+  "effects": {
+    "gesturePulse": {
+      "enabled": true,
+      "strength": 0.9,
+      "speed": 3.0,
+      "repeat": 1
+    },
+
+    "responseRing": {
+      "enabled": true,
+      "count": 2,
+      "startRadius": 0.55,
+      "endRadius": 1.35,
+      "duration": 0.55,
+      "opacity": 0.7,
+      "fadeOut": true
+    },
+
+    "glow": {
+      "enabled": true,
+      "minimum": 0.25,
+      "maximum": 1.1,
+      "speed": 3.2
+    },
+
+    "particles": {
+      "enabled": true,
+      "count": 45,
+      "movement": "radial_outward",
+      "speed": 1.0,
+      "radius": 1.15
+    },
+
+    "scanline": {
+      "enabled": true,
+      "strength": 0.15,
+      "speed": 2.5
+    },
+
+    "confirmationFlash": {
+      "enabled": true,
+      "startTime": 0.25,
+      "duration": 0.12,
+      "strength": 0.3
+    }
+  },
+
+  "gesture": {
+    "enabled": true,
+    "supportedGestures": [
+      "pinch",
+      "swipe",
+      "grab",
+      "rotate",
+      "zoom",
+      "drag",
+      "point",
+      "palm",
+      "two_hand"
+    ],
+    "responseMode": "gesture_specific",
+    "sensitivity": 1.0
+  },
+
+  "status": {
+    "displayText": "GESTURE DETECTED",
+    "showIndicator": true,
+    "indicatorPulse": true
+  },
+
+  "sound": {
+    "enabled": false,
+    "asset": "assets/sounds/gesture_response.wav",
+    "volume": 0.3
+  },
+
+  "onComplete": {
+    "nextState": "idle"
+  },
+
+  "easing": {
+    "default": "ease_in_out",
+    "response": "ease_out",
+    "fade": "ease_in"
+  }
+}

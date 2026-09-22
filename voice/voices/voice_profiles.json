@@ -1,0 +1,327 @@
+{
+  "version": "1.0.0",
+  "assistant": "RENIX",
+  "default_profile": "renix_primary",
+
+  "settings": {
+    "default_language": "en",
+    "auto_language_detection": true,
+    "auto_switch_language": true,
+    "preserve_voice_character": true,
+    "allow_emotional_variation": true,
+    "allow_speed_variation": true,
+    "allow_pitch_variation": true,
+    "allow_volume_variation": true,
+    "interruptible": true,
+    "streaming": true
+  },
+
+  "profiles": {
+    "renix_primary": {
+      "id": "renix_primary",
+      "name": "RENIX Primary",
+      "description": "Primary natural conversational voice for RENIX.",
+      "gender": "neutral",
+      "style": "natural",
+      "personality": "intelligent, calm, confident, warm, human-like",
+
+      "languages": {
+        "en": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "en-IN",
+          "fallback_locale": "en-US",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "hi": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "hi-IN",
+          "fallback_locale": "hi-IN",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "gu": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "gu-IN",
+          "fallback_locale": "gu-IN",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "mr": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "mr-IN",
+          "fallback_locale": "mr-IN",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "sa": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "hi-IN",
+          "fallback_locale": "hi-IN",
+          "speed": 0.95,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "bn": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "bn-IN",
+          "fallback_locale": "bn-IN",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "pa": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "pa-IN",
+          "fallback_locale": "pa-IN",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "ta": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "ta-IN",
+          "fallback_locale": "ta-IN",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "te": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "te-IN",
+          "fallback_locale": "te-IN",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "kn": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "kn-IN",
+          "fallback_locale": "kn-IN",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "ml": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "ml-IN",
+          "fallback_locale": "ml-IN",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "ur": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "ur-PK",
+          "fallback_locale": "ur-PK",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "ar": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "ar-SA",
+          "fallback_locale": "ar-SA",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "es": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "es-ES",
+          "fallback_locale": "es-MX",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "fr": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "fr-FR",
+          "fallback_locale": "fr-CA",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "de": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "de-DE",
+          "fallback_locale": "de-DE",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "it": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "it-IT",
+          "fallback_locale": "it-IT",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "pt": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "pt-BR",
+          "fallback_locale": "pt-PT",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "ru": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "ru-RU",
+          "fallback_locale": "ru-RU",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "ja": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "ja-JP",
+          "fallback_locale": "ja-JP",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "ko": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "ko-KR",
+          "fallback_locale": "ko-KR",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "zh": {
+          "enabled": true,
+          "voice": "default",
+          "locale": "zh-CN",
+          "fallback_locale": "zh-TW",
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        }
+      },
+
+      "emotions": {
+        "neutral": {
+          "speed": 1.0,
+          "pitch": 1.0,
+          "volume": 1.0
+        },
+
+        "happy": {
+          "speed": 1.05,
+          "pitch": 1.05,
+          "volume": 1.0
+        },
+
+        "excited": {
+          "speed": 1.1,
+          "pitch": 1.08,
+          "volume": 1.0
+        },
+
+        "calm": {
+          "speed": 0.92,
+          "pitch": 0.97,
+          "volume": 0.95
+        },
+
+        "serious": {
+          "speed": 0.94,
+          "pitch": 0.96,
+          "volume": 1.0
+        },
+
+        "sad": {
+          "speed": 0.88,
+          "pitch": 0.94,
+          "volume": 0.9
+        },
+
+        "angry": {
+          "speed": 1.02,
+          "pitch": 0.98,
+          "volume": 1.0
+        },
+
+        "surprised": {
+          "speed": 1.08,
+          "pitch": 1.1,
+          "volume": 1.0
+        },
+
+        "focused": {
+          "speed": 0.96,
+          "pitch": 0.98,
+          "volume": 1.0
+        }
+      },
+
+      "conversation": {
+        "natural_pauses": true,
+        "dynamic_punctuation": true,
+        "sentence_breaks": true,
+        "question_intonation": true,
+        "avoid_robotic_repetition": true,
+        "avoid_excessive_formality": true,
+        "adapt_to_user_speaking_speed": true,
+        "adapt_to_user_emotion": true,
+        "allow_short_responses": true,
+        "allow_long_responses": true
+      }
+    }
+  },
+
+  "fallbacks": {
+    "language": "en",
+    "profile": "renix_primary",
+    "voice": "default",
+    "locale": "en-IN"
+  }
+}

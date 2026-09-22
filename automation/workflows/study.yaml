@@ -1,0 +1,139 @@
+name: study
+version: "1.0"
+
+description: >
+  RENIX study routine that prepares the environment,
+  starts a focused study session, manages distractions,
+  and tracks the session.
+
+enabled: true
+
+variables:
+  session_duration: 60
+  focus_mode: true
+  music_enabled: false
+  notifications_enabled: false
+  smart_home_enabled: false
+
+triggers:
+  - type: manual
+    name: start_study
+
+steps:
+
+  - id: initialize
+    type: system
+    action: initialize
+    continue_on_error: true
+
+  - id: announce
+    type: assistant
+    action: speak
+    data:
+      message: >
+        Study mode activated. Let's make this session productive.
+    continue_on_error: true
+
+  - id: focus_mode
+    type: condition
+    condition: "${focus_mode} == true"
+    then:
+
+      - id: enable_focus
+        type: system
+        action: enable_focus_mode
+        continue_on_error: true
+
+      - id: disable_notifications
+        type: notifications
+        action: disable
+        data:
+          duration: "${session_duration}"
+        continue_on_error: true
+
+  - id: smart_environment
+    type: condition
+    condition: "${smart_home_enabled} == true"
+    then:
+
+      - id: study_lights
+        type: smart_home
+        action: set_lights
+        data:
+          state: "on"
+          brightness: 65
+        continue_on_error: true
+
+  - id: study_music
+    type: condition
+    condition: "${music_enabled} == true"
+    then:
+
+      - id: play_music
+        type: media
+        action: play
+        data:
+          playlist: study
+        continue_on_error: true
+
+  - id: start_timer
+    type: timer
+    action: start
+    data:
+      duration_minutes: "${session_duration}"
+      name: study_session
+    continue_on_error: true
+
+  - id: start_session
+    type: education
+    action: start_session
+    data:
+      duration_minutes: "${session_duration}"
+    save_as: study_session
+    continue_on_error: true
+
+  - id: study_message
+    type: assistant
+    action: speak
+    data:
+      message: >
+        Your study session has started. Stay focused and
+        avoid unnecessary distractions.
+    continue_on_error: true
+
+  - id: session_complete
+    type: assistant
+    action: speak
+    data:
+      message: >
+        Study session complete. Great work.
+    continue_on_error: true
+
+  - id: restore_notifications
+    type: condition
+    condition: "${notifications_enabled} == true"
+    then:
+
+      - id: enable_notifications
+        type: notifications
+        action: enable
+        continue_on_error: true
+
+  - id: disable_focus
+    type: condition
+    condition: "${focus_mode} == true"
+    then:
+
+      - id: exit_focus
+        type: system
+        action: disable_focus_mode
+        continue_on_error: true
+
+  - id: finish
+    type: assistant
+    action: speak
+    data:
+      message: >
+        Study mode has been completed. RENIX is returning
+        to normal operation.
+    continue_on_error: true

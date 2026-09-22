@@ -1,0 +1,13 @@
+def test_core_imports():
+    import main
+    import core.orchestrator
+    import core.scheduler
+    import holographic_ui
+    import voice.conversation_mode
+    import voice.interruption
+    import vision.face_recognition
+    import vision.vision_pipeline
+    import devices.protocols.wifi
+    import integrations.authentication
+    import notifications.notification_rules
+    import education.question_generator

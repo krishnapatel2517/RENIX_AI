@@ -1,0 +1,531 @@
+```yaml
+# ============================================================
+# RENIX GESTURE CONFIGURATION
+# ============================================================
+
+system:
+  enabled: true
+  backend: "mediapipe"
+  coordinate_system: "normalized"
+  handedness_detection: true
+  maximum_hands: 2
+  tracking_enabled: true
+  smoothing_enabled: true
+  target_fps: 30
+  confidence_threshold: 0.65
+
+
+# ============================================================
+# HAND TRACKING
+# ============================================================
+
+hand_tracking:
+  enabled: true
+
+  detection_confidence: 0.65
+  tracking_confidence: 0.65
+
+  maximum_hands: 2
+
+  model_complexity: 1
+
+  min_tracking_frames: 3
+  lost_hand_timeout_ms: 500
+
+  smoothing:
+    enabled: true
+    factor: 0.65
+    position_smoothing: 0.70
+    rotation_smoothing: 0.70
+    velocity_smoothing: 0.60
+
+
+# ============================================================
+# FINGER TRACKING
+# ============================================================
+
+finger_tracking:
+  enabled: true
+
+  track_thumb: true
+  track_index: true
+  track_middle: true
+  track_ring: true
+  track_pinky: true
+
+  calculate_angles: true
+  calculate_distances: true
+  calculate_velocity: true
+
+  minimum_finger_confidence: 0.60
+
+
+# ============================================================
+# GESTURE CLASSIFIER
+# ============================================================
+
+classifier:
+  enabled: true
+
+  confidence_threshold: 0.70
+
+  stability_frames: 3
+
+  require_stable_gesture: true
+
+  smoothing: true
+
+  classify_unknown_gestures: false
+
+  supported_gestures:
+    - "pinch"
+    - "swipe"
+    - "grab"
+    - "rotate"
+    - "zoom"
+    - "drag"
+    - "point"
+    - "palm"
+    - "two_hand"
+
+
+# ============================================================
+# GESTURE ENGINE
+# ============================================================
+
+gesture_engine:
+  enabled: true
+
+  processing_mode: "adaptive"
+
+  continuous_detection: true
+
+  event_driven: true
+
+  cooldown_enabled: true
+
+  default_cooldown_ms: 250
+
+  maximum_gesture_events_per_second: 20
+
+  prevent_duplicate_events: true
+
+  priority:
+    - "pinch"
+    - "grab"
+    - "zoom"
+    - "rotate"
+    - "drag"
+    - "swipe"
+    - "point"
+    - "palm"
+
+
+# ============================================================
+# PINCH
+# ============================================================
+
+pinch:
+  enabled: true
+
+  thumb_index_distance: 0.045
+
+  release_distance: 0.070
+
+  confidence_threshold: 0.70
+
+  stable_frames: 2
+
+  cooldown_ms: 150
+
+  use_for:
+    - "select"
+    - "click"
+    - "activate"
+    - "zoom"
+    - "drag"
+
+
+# ============================================================
+# SWIPE
+# ============================================================
+
+swipe:
+  enabled: true
+
+  minimum_distance: 0.15
+
+  minimum_velocity: 0.40
+
+  maximum_duration_ms: 700
+
+  cooldown_ms: 400
+
+  directions:
+    left: true
+    right: true
+    up: true
+    down: true
+
+  diagonal_swipes: false
+
+
+# ============================================================
+# GRAB
+# ============================================================
+
+grab:
+  enabled: true
+
+  minimum_closed_fingers: 4
+
+  confidence_threshold: 0.70
+
+  stable_frames: 3
+
+  release_delay_ms: 100
+
+  use_for:
+    - "grab"
+    - "move"
+    - "hold"
+    - "window_control"
+
+
+# ============================================================
+# ROTATE
+# ============================================================
+
+rotate:
+  enabled: true
+
+  two_hand_required: true
+
+  minimum_rotation_degrees: 8.0
+
+  maximum_rotation_speed: 180.0
+
+  smoothing: true
+
+  sensitivity: 1.0
+
+  clockwise_enabled: true
+
+  counterclockwise_enabled: true
+
+  cooldown_ms: 200
+
+
+# ============================================================
+# ZOOM
+# ============================================================
+
+zoom:
+  enabled: true
+
+  two_hand_required: true
+
+  minimum_distance_change: 0.02
+
+  maximum_distance_change: 0.50
+
+  sensitivity: 1.0
+
+  smoothing: true
+
+  minimum_scale: 0.25
+
+  maximum_scale: 4.0
+
+  pinch_zoom_enabled: true
+
+  cooldown_ms: 100
+
+
+# ============================================================
+# DRAG
+# ============================================================
+
+drag:
+  enabled: true
+
+  activation_gesture: "pinch"
+
+  release_gesture: "open"
+
+  minimum_movement: 0.01
+
+  sensitivity: 1.0
+
+  smoothing: 0.75
+
+  acceleration: false
+
+  inertia: false
+
+
+# ============================================================
+# POINT
+# ============================================================
+
+point:
+  enabled: true
+
+  index_finger_required: true
+
+  other_fingers_closed: true
+
+  confidence_threshold: 0.70
+
+  stable_frames: 3
+
+  cursor_control: true
+
+  selection_enabled: true
+
+  cooldown_ms: 150
+
+
+# ============================================================
+# PALM
+# ============================================================
+
+palm:
+  enabled: true
+
+  minimum_open_fingers: 4
+
+  confidence_threshold: 0.70
+
+  stable_frames: 3
+
+  use_for:
+    - "pause"
+    - "stop"
+    - "menu"
+    - "dismiss"
+
+
+# ============================================================
+# TWO-HAND GESTURES
+# ============================================================
+
+two_hand:
+  enabled: true
+
+  maximum_distance: 1.0
+
+  minimum_hand_confidence: 0.65
+
+  supported:
+    zoom: true
+    rotate: true
+    expand: true
+    contract: true
+    window_move: true
+
+  synchronization:
+    enabled: true
+    maximum_time_difference_ms: 150
+
+
+# ============================================================
+# GESTURE MAPPING
+# ============================================================
+
+mapping:
+
+  pinch:
+    action: "select"
+
+  pinch_hold:
+    action: "drag"
+
+  pinch_release:
+    action: "drop"
+
+  swipe_left:
+    action: "previous"
+
+  swipe_right:
+    action: "next"
+
+  swipe_up:
+    action: "scroll_up"
+
+  swipe_down:
+    action: "scroll_down"
+
+  grab:
+    action: "grab"
+
+  grab_move:
+    action: "move"
+
+  rotate_clockwise:
+    action: "rotate_clockwise"
+
+  rotate_counterclockwise:
+    action: "rotate_counterclockwise"
+
+  zoom_in:
+    action: "zoom_in"
+
+  zoom_out:
+    action: "zoom_out"
+
+  point:
+    action: "cursor"
+
+  palm:
+    action: "pause"
+
+  palm_hold:
+    action: "open_menu"
+
+
+# ============================================================
+# HOLOGRAPHIC UI CONTROL
+# ============================================================
+
+holographic_ui:
+  enabled: true
+
+  gesture_control: true
+
+  cursor_control: true
+
+  window_control: true
+
+  widget_control: true
+
+  hologram_rotation: true
+
+  hologram_zoom: true
+
+  hologram_drag: true
+
+  object_selection: true
+
+  menu_navigation: true
+
+  desktop_navigation: true
+
+  file_manipulation: true
+
+  sensitivity:
+    cursor: 1.0
+    zoom: 1.0
+    rotation: 1.0
+    drag: 1.0
+    scroll: 1.0
+
+
+# ============================================================
+# DESKTOP CONTROL
+# ============================================================
+
+desktop:
+  enabled: true
+
+  cursor:
+    enabled: true
+    sensitivity: 1.25
+    smoothing: 0.70
+    acceleration: false
+
+  click:
+    pinch_to_click: true
+    double_pinch_to_double_click: false
+
+  right_click:
+    enabled: true
+    gesture: "two_finger_pinch"
+
+  scrolling:
+    enabled: true
+
+  window_management:
+    enabled: true
+    grab_to_move: true
+    pinch_to_resize: true
+
+  files:
+    enabled: true
+    drag_and_drop: true
+    pinch_to_select: true
+
+
+# ============================================================
+# SAFETY
+# ============================================================
+
+safety:
+  enabled: true
+
+  require_stable_gesture: true
+
+  accidental_action_protection: true
+
+  destructive_actions_require_confirmation: true
+
+  destructive_actions:
+    - "delete"
+    - "shutdown"
+    - "restart"
+    - "format"
+    - "terminate_process"
+
+  emergency_stop_gesture: "palm_hold"
+
+  emergency_stop_duration_ms: 1500
+
+
+# ============================================================
+# PERFORMANCE
+# ============================================================
+
+performance:
+  asynchronous_processing: true
+
+  multithreading: true
+
+  maximum_workers: 2
+
+  frame_queue_size: 3
+
+  drop_old_frames: true
+
+  adaptive_processing: true
+
+  reduce_processing_when_idle: true
+
+  target_latency_ms: 80
+
+
+# ============================================================
+# DEBUG
+# ============================================================
+
+debug:
+  enabled: true
+
+  show_landmarks: true
+
+  show_bounding_boxes: true
+
+  show_gesture_name: true
+
+  show_confidence: true
+
+  show_coordinates: false
+
+  show_velocity: false
+
+  log_gesture_events: true
+
+
+# ============================================================
+# END OF GESTURE CONFIGURATION
+# ============================================================
+```

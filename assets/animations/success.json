@@ -1,0 +1,123 @@
+{
+  "name": "renix_success",
+  "version": "1.0",
+  "description": "Success animation displayed when RENIX completes a task successfully.",
+  "loop": false,
+  "duration": 1.4,
+  "fps": 60,
+
+  "keyframes": [
+    {
+      "time": 0.0,
+      "opacity": 1.0,
+      "scale": 0.95,
+      "rotation": 0.0,
+      "glow": 0.75,
+      "pulse": 0.0
+    },
+    {
+      "time": 0.2,
+      "opacity": 1.0,
+      "scale": 1.08,
+      "rotation": 0.0,
+      "glow": 1.15,
+      "pulse": 1.0
+    },
+    {
+      "time": 0.45,
+      "opacity": 1.0,
+      "scale": 0.98,
+      "rotation": 0.0,
+      "glow": 0.95,
+      "pulse": 0.55
+    },
+    {
+      "time": 0.75,
+      "opacity": 1.0,
+      "scale": 1.02,
+      "rotation": 0.0,
+      "glow": 1.05,
+      "pulse": 0.75
+    },
+    {
+      "time": 1.0,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.9,
+      "pulse": 0.3
+    },
+    {
+      "time": 1.4,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.85,
+      "pulse": 0.0
+    }
+  ],
+
+  "effects": {
+    "energyRing": {
+      "enabled": true,
+      "startTime": 0.15,
+      "duration": 0.8,
+      "startScale": 0.4,
+      "endScale": 1.8,
+      "opacity": 0.8
+    },
+
+    "particleBurst": {
+      "enabled": true,
+      "startTime": 0.1,
+      "duration": 0.7,
+      "count": 100,
+      "direction": "outward",
+      "speed": 2.0,
+      "intensity": 0.8
+    },
+
+    "checkmark": {
+      "enabled": true,
+      "startTime": 0.25,
+      "duration": 0.45,
+      "drawProgress": true,
+      "scale": 1.0
+    },
+
+    "glow": {
+      "enabled": true,
+      "minimum": 0.75,
+      "maximum": 1.15,
+      "speed": 2.5
+    },
+
+    "scanline": {
+      "enabled": true,
+      "strength": 0.15,
+      "speed": 2.0
+    }
+  },
+
+  "status": {
+    "displayText": "SUCCESS",
+    "showIndicator": true,
+    "indicatorPulse": true
+  },
+
+  "sound": {
+    "enabled": true,
+    "asset": "assets/sounds/success.wav",
+    "volume": 0.6
+  },
+
+  "onComplete": {
+    "nextState": "idle"
+  },
+
+  "easing": {
+    "default": "ease_in_out",
+    "burst": "ease_out",
+    "settle": "ease_in_out"
+  }
+}

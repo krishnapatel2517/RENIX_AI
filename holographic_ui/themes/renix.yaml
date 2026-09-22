@@ -1,0 +1,67 @@
+name: RENIX
+version: "1.0"
+
+theme:
+  primary: "#00FF9C"
+  secondary: "#00D9FF"
+  accent: "#7C5CFF"
+
+  background: "#02070A"
+  background_secondary: "#061218"
+
+  panel: "#07151A"
+  panel_transparent: "rgba(4, 20, 25, 0.72)"
+
+  text: "#E8FFFA"
+  text_secondary: "#8BB8B0"
+  text_muted: "#50736D"
+
+  success: "#00FF9C"
+  warning: "#FFD166"
+  danger: "#FF4D6D"
+  info: "#00D9FF"
+
+  border: "#0D4F48"
+
+  glow:
+    enabled: true
+    intensity: 0.85
+    radius: 18
+
+typography:
+  primary_font: "Orbitron"
+  secondary_font: "Inter"
+  monospace_font: "JetBrains Mono"
+
+  title_size: 32
+  heading_size: 24
+  body_size: 16
+  small_size: 12
+
+ui:
+  corner_radius: 18
+  border_width: 1
+  panel_opacity: 0.72
+
+  cursor:
+    enabled: true
+    size: 18
+    glow: true
+
+  hologram:
+    enabled: true
+    opacity: 0.92
+    scanlines: true
+    scanline_opacity: 0.12
+
+  particles:
+    enabled: true
+    density: 0.45
+
+layout:
+  margin: 24
+  spacing: 16
+
+animation:
+  enabled: true
+  speed: 1.0

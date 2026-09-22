@@ -1,0 +1,112 @@
+{
+  "name": "renix_listening",
+  "version": "1.0",
+  "description": "Listening animation shown while RENIX is actively receiving voice input.",
+  "loop": true,
+  "duration": 2.0,
+  "fps": 60,
+
+  "keyframes": [
+    {
+      "time": 0.0,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "glow": 0.8,
+      "pulse": 0.25,
+      "wave": 0.0
+    },
+    {
+      "time": 0.5,
+      "opacity": 1.0,
+      "scale": 1.025,
+      "glow": 1.0,
+      "pulse": 0.7,
+      "wave": 0.6
+    },
+    {
+      "time": 1.0,
+      "opacity": 1.0,
+      "scale": 1.05,
+      "glow": 1.15,
+      "pulse": 1.0,
+      "wave": 1.0
+    },
+    {
+      "time": 1.5,
+      "opacity": 1.0,
+      "scale": 1.025,
+      "glow": 1.0,
+      "pulse": 0.7,
+      "wave": 0.6
+    },
+    {
+      "time": 2.0,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "glow": 0.8,
+      "pulse": 0.25,
+      "wave": 0.0
+    }
+  ],
+
+  "effects": {
+    "voiceWave": {
+      "enabled": true,
+      "bars": 24,
+      "minimumHeight": 0.15,
+      "maximumHeight": 1.0,
+      "speed": 4.0,
+      "reactToAudio": true,
+      "smoothing": 0.7
+    },
+
+    "pulse": {
+      "enabled": true,
+      "speed": 1.5,
+      "strength": 0.35
+    },
+
+    "glow": {
+      "enabled": true,
+      "minimum": 0.7,
+      "maximum": 1.15,
+      "speed": 1.8
+    },
+
+    "scanline": {
+      "enabled": true,
+      "strength": 0.18,
+      "speed": 1.5
+    },
+
+    "particles": {
+      "enabled": true,
+      "count": 80,
+      "movement": "orbital",
+      "speed": 0.6,
+      "radius": 1.2,
+      "reactToAudio": true
+    }
+  },
+
+  "audio": {
+    "enabled": true,
+    "inputReactive": true,
+    "sensitivity": 0.75,
+    "minimumLevel": 0.02,
+    "maximumLevel": 1.0
+  },
+
+  "onStart": {
+    "sound": false
+  },
+
+  "onComplete": {
+    "nextState": "thinking"
+  },
+
+  "easing": {
+    "default": "ease_in_out",
+    "pulse": "ease_in_out"
+  }
+}

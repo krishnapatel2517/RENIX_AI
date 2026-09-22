@@ -1,0 +1,114 @@
+{
+  "name": "renix_startup",
+  "version": "1.0",
+  "description": "RENIX startup animation sequence.",
+  "loop": false,
+  "duration": 2.8,
+  "fps": 60,
+
+  "keyframes": [
+    {
+      "time": 0.0,
+      "opacity": 0.0,
+      "scale": 0.65,
+      "rotation": -8.0,
+      "glow": 0.0,
+      "blur": 1.0,
+      "flicker": 0.0
+    },
+    {
+      "time": 0.25,
+      "opacity": 0.15,
+      "scale": 0.72,
+      "rotation": 6.0,
+      "glow": 0.25,
+      "blur": 0.8,
+      "flicker": 0.4
+    },
+    {
+      "time": 0.55,
+      "opacity": 0.45,
+      "scale": 0.88,
+      "rotation": -3.0,
+      "glow": 0.55,
+      "blur": 0.45,
+      "flicker": 0.7
+    },
+    {
+      "time": 0.9,
+      "opacity": 0.8,
+      "scale": 1.04,
+      "rotation": 1.5,
+      "glow": 0.9,
+      "blur": 0.15,
+      "flicker": 1.0
+    },
+    {
+      "time": 1.2,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 1.0,
+      "blur": 0.0,
+      "flicker": 0.0
+    },
+    {
+      "time": 1.8,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.85,
+      "blur": 0.0,
+      "flicker": 0.0
+    },
+    {
+      "time": 2.3,
+      "opacity": 1.0,
+      "scale": 1.01,
+      "rotation": 0.0,
+      "glow": 0.95,
+      "blur": 0.0,
+      "flicker": 0.1
+    },
+    {
+      "time": 2.8,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.85,
+      "blur": 0.0,
+      "flicker": 0.0
+    }
+  ],
+
+  "effects": {
+    "scanline": {
+      "enabled": true,
+      "strength": 0.35,
+      "speed": 2.5
+    },
+    "glitch": {
+      "enabled": true,
+      "strength": 0.18,
+      "duration": 0.7
+    },
+    "particleBurst": {
+      "enabled": true,
+      "startTime": 0.45,
+      "duration": 0.8,
+      "intensity": 0.7
+    },
+    "energyRing": {
+      "enabled": true,
+      "startTime": 0.65,
+      "duration": 1.2,
+      "scale": 1.4
+    }
+  },
+
+  "easing": {
+    "default": "ease_in_out",
+    "entrance": "ease_out",
+    "settle": "ease_in_out"
+  }
+}

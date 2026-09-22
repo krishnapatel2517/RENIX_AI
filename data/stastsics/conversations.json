@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0.0",
+  "store_version": 1,
+  "format": "renix.conversation_statistics",
+  "description": "Aggregated analytics for RENIX conversations.",
+  "updated_at": null,
+
+  "configuration": {
+    "track_sessions": true,
+    "track_messages": true,
+    "track_tokens": true,
+    "track_languages": true,
+    "track_topics": true,
+    "track_duration": true,
+    "track_sentiment": true,
+    "retention_days": 3650
+  },
+
+  "totals": {
+    "conversations": 0,
+    "active_conversations": 0,
+    "completed_conversations": 0,
+    "archived_conversations": 0,
+    "messages": 0,
+    "user_messages": 0,
+    "assistant_messages": 0,
+    "system_messages": 0
+  },
+
+  "messages": {
+    "average_per_conversation": 0,
+    "average_user_messages": 0,
+    "average_assistant_messages": 0,
+    "minimum_messages": 0,
+    "maximum_messages": 0
+  },
+
+  "duration": {
+    "total_seconds": 0,
+    "average_seconds": 0,
+    "minimum_seconds": 0,
+    "maximum_seconds": 0,
+    "median_seconds": 0
+  },
+
+  "tokens": {
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "average_tokens_per_message": 0,
+    "average_tokens_per_conversation": 0
+  },
+
+  "languages": {},
+
+  "topics": {},
+
+  "intents": {},
+
+  "models": {},
+
+  "agents": {},
+
+  "sources": {},
+
+  "sentiment": {
+    "positive": 0,
+    "neutral": 0,
+    "negative": 0,
+    "mixed": 0,
+    "unknown": 0
+  },
+
+  "hourly_distribution": {
+    "00": 0,
+    "01": 0,
+    "02": 0,
+    "03": 0,
+    "04": 0,
+    "05": 0,
+    "06": 0,
+    "07": 0,
+    "08": 0,
+    "09": 0,
+    "10": 0,
+    "11": 0,
+    "12": 0,
+    "13": 0,
+    "14": 0,
+    "15": 0,
+    "16": 0,
+    "17": 0,
+    "18": 0,
+    "19": 0,
+    "20": 0,
+    "21": 0,
+    "22": 0,
+    "23": 0
+  },
+
+  "daily_distribution": {},
+
+  "recent_activity": [],
+
+  "retention": {
+    "average_return_interval_seconds": 0,
+    "returning_users": 0,
+    "new_users": 0
+  },
+
+  "integrity": {
+    "record_count": 0,
+    "last_recalculated_at": null,
+    "checksum": null,
+    "healthy": true
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "name": "renix_processing",
+  "version": "1.0",
+  "description": "Processing animation displayed while RENIX is actively executing a task.",
+  "loop": true,
+  "duration": 2.0,
+  "fps": 60,
+
+  "keyframes": [
+    {
+      "time": 0.0,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.8,
+      "pulse": 0.2
+    },
+    {
+      "time": 0.5,
+      "opacity": 1.0,
+      "scale": 1.02,
+      "rotation": 90.0,
+      "glow": 0.95,
+      "pulse": 0.55
+    },
+    {
+      "time": 1.0,
+      "opacity": 1.0,
+      "scale": 1.04,
+      "rotation": 180.0,
+      "glow": 1.1,
+      "pulse": 1.0
+    },
+    {
+      "time": 1.5,
+      "opacity": 1.0,
+      "scale": 1.02,
+      "rotation": 270.0,
+      "glow": 0.95,
+      "pulse": 0.55
+    },
+    {
+      "time": 2.0,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 360.0,
+      "glow": 0.8,
+      "pulse": 0.2
+    }
+  ],
+
+  "effects": {
+    "processingRing": {
+      "enabled": true,
+      "count": 2,
+      "rotationSpeed": 120.0,
+      "radius": 1.2,
+      "opacity": 0.7
+    },
+
+    "particles": {
+      "enabled": true,
+      "count": 150,
+      "movement": "orbital",
+      "speed": 1.2,
+      "radius": 1.5
+    },
+
+    "progressPulse": {
+      "enabled": true,
+      "speed": 2.0,
+      "strength": 0.35
+    },
+
+    "glow": {
+      "enabled": true,
+      "minimum": 0.7,
+      "maximum": 1.1,
+      "speed": 2.0
+    },
+
+    "scanline": {
+      "enabled": true,
+      "strength": 0.18,
+      "speed": 2.0
+    }
+  },
+
+  "status": {
+    "displayText": "PROCESSING",
+    "showIndicator": true,
+    "indicatorPulse": true
+  },
+
+  "onComplete": {
+    "nextState": "success"
+  },
+
+  "easing": {
+    "default": "ease_in_out",
+    "rotation": "linear"
+  }
+}

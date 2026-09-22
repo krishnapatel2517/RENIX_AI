@@ -1,0 +1,172 @@
+{
+  "name": "renix_scan",
+  "version": "1.0",
+  "description": "Scanning animation for RENIX vision, security, object detection, and system scanning operations.",
+  "loop": true,
+  "duration": 2.4,
+  "fps": 60,
+
+  "keyframes": [
+    {
+      "time": 0.0,
+      "opacity": 0.0,
+      "scale": 0.9,
+      "rotation": 0.0,
+      "glow": 0.35,
+      "scanProgress": 0.0,
+      "scanOffset": -1.0
+    },
+    {
+      "time": 0.3,
+      "opacity": 0.7,
+      "scale": 0.96,
+      "rotation": 0.0,
+      "glow": 0.75,
+      "scanProgress": 0.2,
+      "scanOffset": -0.6
+    },
+    {
+      "time": 0.6,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 1.0,
+      "scanProgress": 0.4,
+      "scanOffset": -0.2
+    },
+    {
+      "time": 0.9,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.9,
+      "scanProgress": 0.6,
+      "scanOffset": 0.2
+    },
+    {
+      "time": 1.2,
+      "opacity": 1.0,
+      "scale": 1.01,
+      "rotation": 0.0,
+      "glow": 1.1,
+      "scanProgress": 0.8,
+      "scanOffset": 0.6
+    },
+    {
+      "time": 1.5,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.85,
+      "scanProgress": 1.0,
+      "scanOffset": 1.0
+    },
+    {
+      "time": 1.8,
+      "opacity": 0.95,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.9,
+      "scanProgress": 0.55,
+      "scanOffset": 0.2
+    },
+    {
+      "time": 2.1,
+      "opacity": 1.0,
+      "scale": 1.01,
+      "rotation": 0.0,
+      "glow": 1.05,
+      "scanProgress": 0.8,
+      "scanOffset": 0.6
+    },
+    {
+      "time": 2.4,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.85,
+      "scanProgress": 1.0,
+      "scanOffset": 1.0
+    }
+  ],
+
+  "effects": {
+    "scanBeam": {
+      "enabled": true,
+      "direction": "top_to_bottom",
+      "speed": 1.4,
+      "width": 0.08,
+      "intensity": 1.0,
+      "softness": 0.35
+    },
+
+    "scanGrid": {
+      "enabled": true,
+      "density": 32,
+      "opacity": 0.35,
+      "movement": "vertical",
+      "speed": 0.8
+    },
+
+    "glow": {
+      "enabled": true,
+      "minimum": 0.45,
+      "maximum": 1.1,
+      "speed": 2.2
+    },
+
+    "rings": {
+      "enabled": true,
+      "count": 3,
+      "radius": 1.0,
+      "rotationSpeed": 45.0,
+      "opacity": 0.5
+    },
+
+    "particles": {
+      "enabled": true,
+      "count": 70,
+      "movement": "vertical",
+      "speed": 0.75,
+      "radius": 1.3
+    },
+
+    "targetMarkers": {
+      "enabled": true,
+      "count": 4,
+      "size": 0.08,
+      "pulse": true,
+      "pulseSpeed": 2.0
+    },
+
+    "dataSweep": {
+      "enabled": true,
+      "direction": "left_to_right",
+      "speed": 1.8,
+      "intensity": 0.65
+    }
+  },
+
+  "status": {
+    "displayText": "SCANNING",
+    "showIndicator": true,
+    "indicatorPulse": true
+  },
+
+  "sound": {
+    "enabled": true,
+    "asset": "assets/sounds/scan.wav",
+    "volume": 0.3,
+    "loop": true
+  },
+
+  "onComplete": {
+    "nextState": "scan"
+  },
+
+  "easing": {
+    "default": "linear",
+    "scan": "linear",
+    "pulse": "ease_in_out"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "store_version": 1,
+  "format": "renix_embedding_index",
+
+  "metadata": {
+    "name": "RENIX Embedding Index",
+    "description": "Indexes used for fast vector and semantic retrieval.",
+    "created_at": null,
+    "updated_at": null,
+    "last_rebuild": null,
+    "managed_by": "RENIX Embedding Manager"
+  },
+
+  "configuration": {
+    "enabled": true,
+    "auto_update": true,
+    "auto_rebuild": true,
+    "validate_references": true,
+    "track_dimensions": true,
+    "track_models": true,
+    "track_collections": true
+  },
+
+  "indexes": {
+    "by_id": {},
+    "by_collection": {},
+    "by_model": {},
+    "by_dimension": {},
+    "by_source": {},
+    "by_source_id": {},
+    "by_memory_id": {},
+    "by_conversation_id": {},
+    "by_document_id": {},
+    "by_created_at": {},
+    "by_updated_at": {}
+  },
+
+  "vector_index": {
+    "backend": "configured_at_runtime",
+    "index_type": null,
+    "dimension": null,
+    "metric": "cosine",
+    "index_reference": null
+  },
+
+  "search_index": {
+    "exact_hashes": {},
+    "content_hashes": {},
+    "normalized_hashes": {}
+  },
+
+  "statistics": {
+    "indexed_embeddings": 0,
+    "indexed_collections": 0,
+    "indexed_models": 0,
+    "indexed_dimensions": 0,
+    "indexed_sources": 0,
+    "last_rebuild": null
+  },
+
+  "integrity": {
+    "valid": true,
+    "invalid_references": 0,
+    "orphaned_embeddings": 0,
+    "last_validation": null
+  }
+}

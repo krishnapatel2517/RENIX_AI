@@ -1,0 +1,708 @@
+```yaml
+# ============================================================
+# RENIX PERMISSIONS CONFIGURATION
+# ============================================================
+
+system:
+  enabled: true
+  default_policy: "least_privilege"
+  deny_unknown_permissions: true
+  require_explicit_permission: true
+  permission_cache: true
+  cache_duration_seconds: 300
+
+
+# ============================================================
+# PERMISSION LEVELS
+# ============================================================
+
+levels:
+
+  guest:
+    description: "Read-only access to safe public functionality"
+    permissions:
+      read: true
+      write: false
+      execute: false
+      system_control: false
+      network_control: false
+      device_control: false
+      security_control: false
+
+  user:
+    description: "Normal RENIX user access"
+    permissions:
+      read: true
+      write: true
+      execute: true
+      system_control: false
+      network_control: true
+      device_control: true
+      security_control: false
+
+  trusted:
+    description: "Expanded access for trusted operations"
+    permissions:
+      read: true
+      write: true
+      execute: true
+      system_control: true
+      network_control: true
+      device_control: true
+      security_control: false
+
+  administrator:
+    description: "Full administrative access"
+    permissions:
+      read: true
+      write: true
+      execute: true
+      system_control: true
+      network_control: true
+      device_control: true
+      security_control: true
+
+
+# ============================================================
+# CORE PERMISSIONS
+# ============================================================
+
+core:
+  read_state:
+    level: "guest"
+
+  update_state:
+    level: "user"
+
+  execute_task:
+    level: "user"
+
+  create_task:
+    level: "user"
+
+  cancel_task:
+    level: "user"
+
+  schedule_task:
+    level: "user"
+
+  modify_configuration:
+    level: "trusted"
+
+  reload_configuration:
+    level: "trusted"
+
+
+# ============================================================
+# COMPUTER PERMISSIONS
+# ============================================================
+
+computer:
+
+  screen_read:
+    level: "guest"
+
+  screenshot:
+    level: "guest"
+
+  mouse_control:
+    level: "user"
+
+  keyboard_control:
+    level: "user"
+
+  clipboard_read:
+    level: "user"
+
+  clipboard_write:
+    level: "user"
+
+  application_launch:
+    level: "user"
+
+  application_close:
+    level: "user"
+
+  window_control:
+    level: "user"
+
+  process_read:
+    level: "user"
+
+  process_terminate:
+    level: "trusted"
+
+  system_settings:
+    level: "trusted"
+
+  shutdown:
+    level: "administrator"
+    confirmation_required: true
+
+  restart:
+    level: "administrator"
+    confirmation_required: true
+
+
+# ============================================================
+# FILE PERMISSIONS
+# ============================================================
+
+files:
+
+  list:
+    level: "guest"
+
+  read:
+    level: "guest"
+
+  preview:
+    level: "guest"
+
+  create:
+    level: "user"
+
+  write:
+    level: "user"
+
+  copy:
+    level: "user"
+
+  move:
+    level: "user"
+
+  rename:
+    level: "user"
+
+  archive:
+    level: "user"
+
+  delete:
+    level: "user"
+    confirmation_required: true
+
+  permanent_delete:
+    level: "trusted"
+    confirmation_required: true
+
+  modify_system_files:
+    level: "administrator"
+    confirmation_required: true
+
+
+# ============================================================
+# BROWSER PERMISSIONS
+# ============================================================
+
+browser:
+
+  open:
+    level: "guest"
+
+  search:
+    level: "guest"
+
+  read_page:
+    level: "guest"
+
+  download:
+    level: "user"
+
+  upload:
+    level: "user"
+    confirmation_required: true
+
+  fill_form:
+    level: "user"
+
+  submit_form:
+    level: "user"
+    confirmation_required: true
+
+  execute_page_scripts:
+    level: "trusted"
+
+  access_local_network:
+    level: "trusted"
+
+
+# ============================================================
+# CODING PERMISSIONS
+# ============================================================
+
+coding:
+
+  read_project:
+    level: "user"
+
+  create_file:
+    level: "user"
+
+  modify_file:
+    level: "user"
+
+  delete_file:
+    level: "user"
+    confirmation_required: true
+
+  install_dependency:
+    level: "trusted"
+    confirmation_required: true
+
+  execute_code:
+    level: "trusted"
+
+  execute_shell:
+    level: "trusted"
+    confirmation_required: true
+
+  modify_environment:
+    level: "trusted"
+
+  modify_system:
+    level: "administrator"
+    confirmation_required: true
+
+
+# ============================================================
+# AI PERMISSIONS
+# ============================================================
+
+ai:
+
+  generate_text:
+    level: "guest"
+
+  analyze_content:
+    level: "guest"
+
+  generate_code:
+    level: "user"
+
+  modify_project:
+    level: "user"
+
+  execute_generated_code:
+    level: "trusted"
+
+  access_memory:
+    level: "user"
+
+  modify_memory:
+    level: "user"
+
+  access_sensitive_memory:
+    level: "trusted"
+
+
+# ============================================================
+# MEMORY PERMISSIONS
+# ============================================================
+
+memory:
+
+  read:
+    level: "user"
+
+  create:
+    level: "user"
+
+  update:
+    level: "user"
+
+  delete:
+    level: "user"
+    confirmation_required: true
+
+  export:
+    level: "user"
+    confirmation_required: true
+
+  reset:
+    level: "administrator"
+    confirmation_required: true
+
+
+# ============================================================
+# VOICE PERMISSIONS
+# ============================================================
+
+voice:
+
+  microphone:
+    level: "user"
+
+  speech_to_text:
+    level: "user"
+
+  text_to_speech:
+    level: "user"
+
+  wake_word:
+    level: "user"
+
+  voice_authentication:
+    level: "trusted"
+
+  continuous_listening:
+    level: "user"
+
+
+# ============================================================
+# VISION PERMISSIONS
+# ============================================================
+
+vision:
+
+  camera:
+    level: "user"
+
+  face_detection:
+    level: "user"
+
+  face_recognition:
+    level: "trusted"
+
+  hand_tracking:
+    level: "user"
+
+  object_detection:
+    level: "user"
+
+  screen_capture:
+    level: "user"
+
+  screen_understanding:
+    level: "trusted"
+
+
+# ============================================================
+# GESTURE PERMISSIONS
+# ============================================================
+
+gestures:
+
+  tracking:
+    level: "user"
+
+  cursor_control:
+    level: "user"
+
+  window_control:
+    level: "user"
+
+  file_drag:
+    level: "user"
+
+  system_control:
+    level: "trusted"
+
+  emergency_lock:
+    level: "trusted"
+
+
+# ============================================================
+# DEVICE PERMISSIONS
+# ============================================================
+
+devices:
+
+  discover:
+    level: "user"
+
+  read_status:
+    level: "user"
+
+  pair:
+    level: "trusted"
+    confirmation_required: true
+
+  control:
+    level: "user"
+
+  remove:
+    level: "trusted"
+    confirmation_required: true
+
+  smart_home_control:
+    level: "user"
+
+  camera_control:
+    level: "trusted"
+
+  firmware_update:
+    level: "administrator"
+    confirmation_required: true
+
+
+# ============================================================
+# AUTOMATION PERMISSIONS
+# ============================================================
+
+automation:
+
+  create_workflow:
+    level: "user"
+
+  modify_workflow:
+    level: "user"
+
+  delete_workflow:
+    level: "user"
+    confirmation_required: true
+
+  execute_workflow:
+    level: "user"
+
+  execute_sensitive_workflow:
+    level: "trusted"
+    confirmation_required: true
+
+  execute_destructive_workflow:
+    level: "administrator"
+    confirmation_required: true
+
+  manage_schedules:
+    level: "user"
+
+
+# ============================================================
+# SECURITY PERMISSIONS
+# ============================================================
+
+security:
+
+  read_security_status:
+    level: "user"
+
+  authentication:
+    level: "user"
+
+  manage_users:
+    level: "administrator"
+
+  modify_permissions:
+    level: "administrator"
+    confirmation_required: true
+
+  modify_security_configuration:
+    level: "administrator"
+    confirmation_required: true
+
+  access_audit_logs:
+    level: "trusted"
+
+  emergency_lock:
+    level: "trusted"
+
+
+# ============================================================
+# NETWORK PERMISSIONS
+# ============================================================
+
+network:
+
+  read_status:
+    level: "guest"
+
+  connect:
+    level: "user"
+
+  disconnect:
+    level: "user"
+
+  scan:
+    level: "trusted"
+
+  modify_network_settings:
+    level: "administrator"
+    confirmation_required: true
+
+  open_external_connection:
+    level: "user"
+
+  unrestricted_network_access:
+    level: "administrator"
+    confirmation_required: true
+
+
+# ============================================================
+# EXTERNAL SERVICES
+# ============================================================
+
+external_services:
+
+  access_api:
+    level: "user"
+
+  send_data:
+    level: "user"
+    confirmation_required: true
+
+  modify_remote_data:
+    level: "trusted"
+    confirmation_required: true
+
+  financial_operation:
+    level: "administrator"
+    confirmation_required: true
+
+
+# ============================================================
+# MEDIA PERMISSIONS
+# ============================================================
+
+media:
+
+  play:
+    level: "guest"
+
+  pause:
+    level: "guest"
+
+  stop:
+    level: "guest"
+
+  volume:
+    level: "user"
+
+  change_media:
+    level: "user"
+
+  casting:
+    level: "user"
+    confirmation_required: true
+
+
+# ============================================================
+# PERSONAL DATA
+# ============================================================
+
+personal:
+
+  calendar_read:
+    level: "user"
+
+  calendar_write:
+    level: "user"
+    confirmation_required: true
+
+  reminders_read:
+    level: "user"
+
+  reminders_write:
+    level: "user"
+
+  notes_read:
+    level: "user"
+
+  notes_write:
+    level: "user"
+
+  tasks_read:
+    level: "user"
+
+  tasks_write:
+    level: "user"
+
+
+# ============================================================
+# CONFIRMATION
+# ============================================================
+
+confirmation:
+
+  enabled: true
+
+  timeout_seconds: 30
+
+  allowed_methods:
+    - "voice"
+    - "gesture"
+    - "ui"
+
+  sensitive_actions:
+    always_confirm:
+      - "shutdown"
+      - "restart"
+      - "permanent_delete"
+      - "format_drive"
+      - "financial_operation"
+      - "modify_permissions"
+      - "modify_security_configuration"
+
+  confirmation_phrases:
+    approve:
+      - "yes"
+      - "confirm"
+      - "approve"
+      - "do it"
+
+    reject:
+      - "no"
+      - "cancel"
+      - "deny"
+      - "stop"
+
+
+# ============================================================
+# SESSION
+# ============================================================
+
+session:
+
+  default_level: "user"
+
+  inherit_permissions: true
+
+  session_timeout_minutes: 60
+
+  require_reauthentication_for_administrator: true
+
+  downgrade_on_timeout: true
+
+  revoke_on_lock: true
+
+
+# ============================================================
+# AUDITING
+# ============================================================
+
+audit:
+
+  enabled: true
+
+  log_permission_checks: true
+
+  log_denied_actions: true
+
+  log_granted_sensitive_actions: true
+
+  log_permission_changes: true
+
+  redact_sensitive_values: true
+
+  directory: "logs/security"
+
+
+# ============================================================
+# DEVELOPMENT
+# ============================================================
+
+development:
+
+  debug: true
+
+  bypass_permissions: false
+
+  bypass_confirmation: false
+
+  grant_all_permissions: false
+
+  mock_authentication: false
+
+
+# ============================================================
+# END OF PERMISSIONS CONFIGURATION
+# ============================================================
+```

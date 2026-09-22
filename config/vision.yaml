@@ -1,0 +1,576 @@
+```yaml
+# ============================================================
+# RENIX VISION CONFIGURATION
+# ============================================================
+
+system:
+  enabled: true
+
+  backend: "opencv"
+
+  default_camera: 0
+
+  processing_mode: "adaptive"
+
+  target_fps: 30
+
+  max_fps: 60
+
+  resolution:
+    width: 1280
+    height: 720
+
+  color_format: "BGR"
+
+  timezone: "Asia/Kolkata"
+
+
+# ============================================================
+# CAMERA
+# ============================================================
+
+camera:
+  enabled: true
+
+  device_id: 0
+
+  auto_start: true
+
+  width: 1280
+
+  height: 720
+
+  fps: 30
+
+  autofocus: true
+
+  auto_exposure: true
+
+  auto_white_balance: true
+
+  brightness: 0.5
+
+  contrast: 0.5
+
+  exposure: 0.0
+
+  buffer_size: 2
+
+  reconnect_attempts: 5
+
+  reconnect_delay_seconds: 1.0
+
+  mirror_preview: true
+
+
+# ============================================================
+# CAMERA MANAGER
+# ============================================================
+
+camera_manager:
+  enabled: true
+
+  detect_available_cameras: true
+
+  preferred_camera: 0
+
+  automatic_camera_selection: true
+
+  fallback_camera: 0
+
+  hot_plug_detection: true
+
+  health_check_interval_seconds: 5
+
+
+# ============================================================
+# FACE DETECTION
+# ============================================================
+
+face_detection:
+  enabled: true
+
+  backend: "mediapipe"
+
+  model: "default"
+
+  confidence_threshold: 0.60
+
+  minimum_detection_confidence: 0.60
+
+  minimum_tracking_confidence: 0.60
+
+  maximum_faces: 10
+
+  detect_landmarks: true
+
+  detect_mesh: true
+
+  detect_blendshapes: true
+
+  tracking: true
+
+
+# ============================================================
+# FACE RECOGNITION
+# ============================================================
+
+face_recognition:
+  enabled: true
+
+  backend: "local"
+
+  recognition_threshold: 0.70
+
+  confidence_threshold: 0.75
+
+  maximum_known_faces: 20
+
+  enrollment_enabled: true
+
+  automatic_enrollment: false
+
+  continuous_recognition: true
+
+  recognition_interval_frames: 5
+
+  unknown_person_action: "mark_unknown"
+
+  database_path: "data/profiles/faces"
+
+
+# ============================================================
+# PERSON DETECTION
+# ============================================================
+
+person_detection:
+  enabled: true
+
+  confidence_threshold: 0.60
+
+  maximum_people: 20
+
+  tracking: true
+
+  estimate_distance: false
+
+  detect_pose: true
+
+
+# ============================================================
+# OBJECT DETECTION
+# ============================================================
+
+object_detection:
+  enabled: true
+
+  backend: "auto"
+
+  model: "auto"
+
+  confidence_threshold: 0.55
+
+  nms_threshold: 0.45
+
+  maximum_objects: 100
+
+  tracking: true
+
+  classes: []
+
+  detect_unknown_objects: true
+
+
+# ============================================================
+# OBJECT TRACKING
+# ============================================================
+
+object_tracking:
+  enabled: true
+
+  tracker: "auto"
+
+  maximum_lost_frames: 30
+
+  minimum_tracking_confidence: 0.50
+
+  interpolation: true
+
+  prediction: true
+
+  smoothing: true
+
+  smoothing_factor: 0.65
+
+
+# ============================================================
+# HAND DETECTION
+# ============================================================
+
+hand_detection:
+  enabled: true
+
+  backend: "mediapipe"
+
+  maximum_hands: 2
+
+  detection_confidence: 0.65
+
+  tracking_confidence: 0.65
+
+  detect_landmarks: true
+
+  handedness: true
+
+  tracking: true
+
+  gesture_mode: true
+
+  draw_landmarks: true
+
+
+# ============================================================
+# POSE DETECTION
+# ============================================================
+
+pose_detection:
+  enabled: true
+
+  backend: "mediapipe"
+
+  detection_confidence: 0.60
+
+  tracking_confidence: 0.60
+
+  model_complexity: 1
+
+  smooth_landmarks: true
+
+  enable_segmentation: false
+
+  detect_full_body: true
+
+
+# ============================================================
+# SCENE UNDERSTANDING
+# ============================================================
+
+scene_understanding:
+  enabled: true
+
+  detect_scene_type: true
+
+  detect_environment: true
+
+  detect_people: true
+
+  detect_objects: true
+
+  spatial_relationships: true
+
+  depth_estimation: false
+
+  scene_change_detection: true
+
+  scene_change_threshold: 0.70
+
+  update_interval_frames: 15
+
+
+# ============================================================
+# OCR
+# ============================================================
+
+ocr:
+  enabled: true
+
+  backend: "auto"
+
+  language: "eng"
+
+  automatic_language_detection: true
+
+  confidence_threshold: 0.60
+
+  detect_orientation: true
+
+  preprocess_image: true
+
+  upscale_small_text: true
+
+  maximum_image_dimension: 4096
+
+  preserve_layout: true
+
+
+# ============================================================
+# DOCUMENT DETECTION
+# ============================================================
+
+document_detection:
+  enabled: true
+
+  detect_documents: true
+
+  detect_pages: true
+
+  perspective_correction: true
+
+  automatic_crop: true
+
+  edge_detection: true
+
+  minimum_document_area: 0.05
+
+  maximum_documents: 20
+
+
+# ============================================================
+# QR / BARCODE DETECTION
+# ============================================================
+
+qr_detection:
+  enabled: true
+
+  detect_qr_codes: true
+
+  detect_barcodes: true
+
+  decode_automatically: true
+
+  confidence_threshold: 0.60
+
+  maximum_codes: 50
+
+
+# ============================================================
+# SCREEN CAPTURE
+# ============================================================
+
+screen_capture:
+  enabled: true
+
+  backend: "mss"
+
+  monitor: 0
+
+  capture_cursor: true
+
+  capture_interval_ms: 100
+
+  maximum_resolution:
+    width: 3840
+    height: 2160
+
+  compression: "png"
+
+  include_window_capture: true
+
+
+# ============================================================
+# SCREEN UNDERSTANDING
+# ============================================================
+
+screen_understanding:
+  enabled: true
+
+  analyze_screen: true
+
+  detect_windows: true
+
+  detect_buttons: true
+
+  detect_icons: true
+
+  detect_text: true
+
+  detect_application: true
+
+  detect_cursor: true
+
+  detect_ui_elements: true
+
+  semantic_analysis: true
+
+  ocr_enabled: true
+
+  analysis_interval_ms: 500
+
+  confidence_threshold: 0.60
+
+
+# ============================================================
+# VISION PIPELINE
+# ============================================================
+
+vision_pipeline:
+  enabled: true
+
+  mode: "adaptive"
+
+  parallel_processing: true
+
+  asynchronous_processing: true
+
+  frame_queue_size: 3
+
+  drop_old_frames: true
+
+  process_every_n_frames: 1
+
+  maximum_processing_time_ms: 100
+
+  prioritize:
+    - "hand_detection"
+    - "face_detection"
+    - "object_detection"
+    - "pose_detection"
+    - "screen_understanding"
+
+  adaptive_quality: true
+
+  reduce_quality_when_overloaded: true
+
+
+# ============================================================
+# VISUAL OUTPUT
+# ============================================================
+
+visualization:
+  enabled: true
+
+  draw_face_boxes: true
+
+  draw_face_landmarks: true
+
+  draw_hand_landmarks: true
+
+  draw_pose_landmarks: true
+
+  draw_object_boxes: true
+
+  draw_tracking_ids: true
+
+  draw_confidence: false
+
+  draw_labels: true
+
+  draw_fps: true
+
+  draw_debug_information: false
+
+
+# ============================================================
+# PERFORMANCE
+# ============================================================
+
+performance:
+  use_gpu: true
+
+  gpu_backend: "auto"
+
+  gpu_memory_limit_mb: 2048
+
+  multithreading: true
+
+  maximum_workers: 4
+
+  model_caching: true
+
+  frame_caching: false
+
+  result_caching: true
+
+  adaptive_fps: true
+
+  minimum_fps: 15
+
+
+# ============================================================
+# PRIVACY
+# ============================================================
+
+privacy:
+  enabled: true
+
+  store_frames: false
+
+  store_camera_recordings: false
+
+  store_face_images: false
+
+  store_raw_screen_captures: false
+
+  store_ocr_images: false
+
+  anonymize_unknown_faces: true
+
+  redact_sensitive_screen_content: true
+
+  local_processing_preferred: true
+
+
+# ============================================================
+# SECURITY
+# ============================================================
+
+security:
+  require_permission_for_camera: true
+
+  require_permission_for_screen_capture: true
+
+  require_permission_for_face_recognition: true
+
+  require_permission_for_recording: true
+
+  prevent_background_recording: true
+
+
+# ============================================================
+# LOGGING
+# ============================================================
+
+logging:
+  enabled: true
+
+  level: "INFO"
+
+  log_camera_events: true
+
+  log_detection_events: false
+
+  log_recognition_events: true
+
+  log_errors: true
+
+  log_performance: true
+
+  redact_sensitive_data: true
+
+
+# ============================================================
+# DEVELOPMENT
+# ============================================================
+
+development:
+  debug: true
+
+  show_preview: true
+
+  show_landmarks: true
+
+  show_detection_boxes: true
+
+  test_camera_on_startup: false
+
+  mock_camera: false
+
+  mock_detections: false
+
+  verbose_logs: false
+
+
+# ============================================================
+# END OF VISION CONFIGURATION
+# ============================================================
+```

@@ -1,0 +1,143 @@
+{
+  "name": "renix_zoom",
+  "version": "1.0",
+  "description": "Smooth holographic zoom animation for RENIX interface elements and gesture-controlled views.",
+  "loop": false,
+  "duration": 1.0,
+  "fps": 60,
+
+  "keyframes": [
+    {
+      "time": 0.0,
+      "opacity": 0.75,
+      "scale": 0.85,
+      "rotation": 0.0,
+      "glow": 0.45,
+      "blur": 0.15,
+      "focus": 0.0
+    },
+    {
+      "time": 0.15,
+      "opacity": 0.9,
+      "scale": 0.92,
+      "rotation": 0.0,
+      "glow": 0.7,
+      "blur": 0.1,
+      "focus": 0.25
+    },
+    {
+      "time": 0.35,
+      "opacity": 1.0,
+      "scale": 1.05,
+      "rotation": 0.0,
+      "glow": 1.0,
+      "blur": 0.04,
+      "focus": 0.55
+    },
+    {
+      "time": 0.55,
+      "opacity": 1.0,
+      "scale": 1.12,
+      "rotation": 0.0,
+      "glow": 1.05,
+      "blur": 0.0,
+      "focus": 0.8
+    },
+    {
+      "time": 0.75,
+      "opacity": 1.0,
+      "scale": 1.06,
+      "rotation": 0.0,
+      "glow": 0.9,
+      "blur": 0.02,
+      "focus": 0.95
+    },
+    {
+      "time": 1.0,
+      "opacity": 1.0,
+      "scale": 1.0,
+      "rotation": 0.0,
+      "glow": 0.8,
+      "blur": 0.0,
+      "focus": 1.0
+    }
+  ],
+
+  "effects": {
+    "zoom": {
+      "enabled": true,
+      "startScale": 0.85,
+      "endScale": 1.12,
+      "overshoot": 0.08,
+      "smooth": true
+    },
+
+    "focus": {
+      "enabled": true,
+      "startBlur": 0.15,
+      "endBlur": 0.0,
+      "focusSpeed": 1.2
+    },
+
+    "glow": {
+      "enabled": true,
+      "minimum": 0.4,
+      "maximum": 1.05,
+      "speed": 2.5
+    },
+
+    "zoomRing": {
+      "enabled": true,
+      "count": 2,
+      "startRadius": 0.75,
+      "endRadius": 1.25,
+      "thickness": 0.025,
+      "opacity": 0.55
+    },
+
+    "particles": {
+      "enabled": true,
+      "count": 45,
+      "movement": "radial_outward",
+      "speed": 0.9,
+      "radius": 1.15
+    },
+
+    "scanline": {
+      "enabled": true,
+      "strength": 0.14,
+      "speed": 1.8
+    }
+  },
+
+  "gesture": {
+    "enabled": true,
+    "source": "pinch",
+    "direction": "inward",
+    "sensitivity": 1.0,
+    "minScale": 0.5,
+    "maxScale": 2.5
+  },
+
+  "status": {
+    "displayText": "ZOOM",
+    "showIndicator": true,
+    "indicatorPulse": true
+  },
+
+  "sound": {
+    "enabled": false,
+    "asset": "assets/sounds/zoom.wav",
+    "volume": 0.2
+  },
+
+  "onComplete": {
+    "nextState": "idle"
+  },
+
+  "easing": {
+    "default": "ease_in_out",
+    "zoom": "ease_out",
+    "focus": "ease_in_out"
+  }
+}

@@ -1,0 +1,263 @@
+```yaml
+# ============================================================
+# RENIX DEVICES CONFIGURATION
+# ============================================================
+
+system:
+  enabled: true
+  auto_discovery: true
+  auto_pairing: false
+  remember_devices: true
+  device_health_monitoring: true
+  discovery_interval_seconds: 10
+  connection_timeout_seconds: 15
+  reconnect_attempts: 3
+  reconnect_delay_seconds: 2
+
+device_manager:
+  enabled: true
+  scan_on_startup: true
+  continuous_discovery: true
+  allow_unknown_devices: false
+  require_confirmation_for_pairing: true
+  require_confirmation_for_control: true
+  maximum_devices: 100
+
+discovery:
+  bluetooth: true
+  wifi: true
+  mdns: true
+  upnp: true
+  mqtt: true
+  usb: true
+  local_network: true
+  scan_interval_seconds: 30
+
+pairing:
+  enabled: true
+  automatic_pairing: false
+  require_user_confirmation: true
+  remember_paired_devices: true
+  pairing_timeout_seconds: 60
+  maximum_pairing_attempts: 3
+
+bluetooth:
+  enabled: true
+  adapter: "default"
+  discoverable: false
+  scan_duration_seconds: 8
+  auto_reconnect: true
+  secure_connections: true
+  allow_unknown_devices: false
+
+wifi:
+  enabled: true
+  auto_discovery: true
+  scan_local_network: true
+  subnet: "auto"
+  connection_timeout_seconds: 10
+  secure_only: true
+
+mqtt:
+  enabled: true
+  broker: "auto"
+  port: 1883
+  secure: false
+  username_env: "RENIX_MQTT_USERNAME"
+  password_env: "RENIX_MQTT_PASSWORD"
+  client_id: "renix"
+  keepalive_seconds: 60
+  reconnect: true
+
+http:
+  enabled: true
+  timeout_seconds: 15
+  verify_ssl: true
+  allow_insecure_http: false
+  maximum_redirects: 5
+
+websocket:
+  enabled: true
+  timeout_seconds: 15
+  reconnect: true
+  ping_interval_seconds: 30
+  maximum_reconnect_attempts: 5
+
+smart_home:
+  enabled: true
+  automatic_discovery: true
+  require_confirmation_for_control: true
+
+  lights:
+    enabled: true
+    brightness_control: true
+    color_control: true
+    temperature_control: true
+    power_control: true
+
+  fans:
+    enabled: true
+    speed_control: true
+    direction_control: true
+    power_control: true
+
+  ac:
+    enabled: true
+    temperature_control: true
+    mode_control: true
+    fan_speed_control: true
+    power_control: true
+
+  tv:
+    enabled: true
+    power_control: true
+    volume_control: true
+    channel_control: true
+    input_control: true
+    media_control: true
+
+  speakers:
+    enabled: true
+    volume_control: true
+    playback_control: true
+    media_selection: true
+
+  plugs:
+    enabled: true
+    power_control: true
+    scheduling: true
+
+  cameras:
+    enabled: true
+    live_view: true
+    pan_tilt: true
+    zoom: true
+    recording_control: false
+
+  sensors:
+    enabled: true
+    temperature: true
+    humidity: true
+    motion: true
+    light: true
+    door: true
+    air_quality: true
+
+mobile:
+  enabled: true
+  automatic_discovery: true
+  notification_sync: true
+  command_sync: true
+  file_transfer: true
+  clipboard_sync: false
+  remote_control: false
+  require_authentication: true
+
+smartwatch:
+  enabled: true
+  automatic_discovery: true
+  notification_sync: true
+  health_data_access: false
+  command_control: true
+  require_authentication: true
+
+tv:
+  enabled: true
+  automatic_discovery: true
+  remote_control: true
+  media_control: true
+  screen_casting: true
+  require_confirmation_for_factory_reset: true
+
+usb:
+  enabled: true
+  automatic_detection: true
+  automatic_mount: false
+  allow_unknown_devices: false
+  scan_for_malware: true
+
+device_permissions:
+  enabled: true
+
+  default_permissions:
+    read: true
+    write: false
+    execute: false
+    control: false
+
+  trusted_devices:
+    require_authentication: false
+    full_control: true
+
+  unknown_devices:
+    require_authentication: true
+    read_only: true
+    control: false
+
+security:
+  encrypted_connections: true
+  verify_device_identity: true
+  reject_unknown_devices: true
+  require_pairing_confirmation: true
+  prevent_unauthorized_control: true
+  log_device_access: true
+  log_pairing_events: true
+
+privacy:
+  enabled: true
+  minimize_device_data: true
+  do_not_store_device_content: true
+  do_not_record_camera_streams: true
+  do_not_store_microphone_streams: true
+  local_processing_preferred: true
+
+health:
+  enabled: true
+  heartbeat_interval_seconds: 30
+  health_check_interval_seconds: 60
+  mark_unresponsive_after_seconds: 120
+  automatic_reconnect: true
+
+automation:
+  enabled: true
+  allow_device_automation: true
+  allow_scheduled_control: true
+  require_confirmation_for_destructive_actions: true
+  maximum_actions_per_workflow: 50
+
+notifications:
+  enabled: true
+  notify_on_connection: true
+  notify_on_disconnection: true
+  notify_on_pairing: true
+  notify_on_security_event: true
+  notify_on_device_error: true
+
+logging:
+  enabled: true
+  level: "INFO"
+  log_discovery: true
+  log_connections: true
+  log_pairing: true
+  log_commands: true
+  log_errors: true
+  redact_credentials: true
+
+performance:
+  asynchronous_connections: true
+  connection_pooling: true
+  maximum_concurrent_connections: 20
+  maximum_workers: 4
+  cache_device_information: true
+  cache_timeout_seconds: 300
+
+development:
+  debug: true
+  simulate_devices: false
+  mock_connections: false
+  verbose_logs: false
+
+# ============================================================
+# END OF DEVICES CONFIGURATION
+# ============================================================
+```

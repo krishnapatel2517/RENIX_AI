@@ -1,0 +1,84 @@
+name: RENIX_HUD
+version: "1.0"
+
+hud:
+  enabled: true
+
+  position:
+    top: true
+    bottom: true
+    left: true
+    right: true
+
+colors:
+  primary: "#00FF9C"
+  secondary: "#00D9FF"
+  text: "#E8FFFA"
+  muted: "#527A73"
+
+panels:
+  transparent: true
+  opacity: 0.68
+  blur: 16
+  border: true
+  border_width: 1
+  corner_radius: 16
+
+elements:
+
+  top_bar:
+    enabled: true
+    height: 64
+    position: top
+
+  system_status:
+    enabled: true
+    position: top_right
+
+  clock:
+    enabled: true
+    position: top_left
+
+  performance:
+    enabled: true
+    position: bottom_left
+
+  network:
+    enabled: true
+    position: bottom_right
+
+  assistant_core:
+    enabled: true
+    position: center
+
+  gesture_cursor:
+    enabled: true
+    position: pointer
+
+  notifications:
+    enabled: true
+    position: top_right
+
+  command_panel:
+    enabled: true
+    position: center
+
+gesture_cursor:
+  shape: ring
+  size: 20
+  inner_radius: 4
+  outer_radius: 10
+  glow: true
+  trail: true
+
+assistant_core:
+  shape: sphere
+  rings: 3
+  particles: true
+  pulse: true
+  rotation: true
+
+text:
+  font: "Orbitron"
+  uppercase: true
+  letter_spacing: 1.2

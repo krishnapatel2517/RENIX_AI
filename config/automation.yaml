@@ -1,0 +1,492 @@
+```yaml
+# ============================================================
+# RENIX AUTOMATION CONFIGURATION
+# ============================================================
+
+system:
+  enabled: true
+  mode: "adaptive"
+
+  maximum_concurrent_workflows: 8
+  maximum_actions_per_workflow: 100
+
+  default_timeout_seconds: 300
+
+  retry_failed_actions: true
+  maximum_retries: 2
+
+  continue_after_noncritical_failure: true
+  rollback_on_critical_failure: true
+
+  asynchronous_execution: true
+  parallel_execution: true
+
+
+# ============================================================
+# WORKFLOW ENGINE
+# ============================================================
+
+workflow_engine:
+  enabled: true
+
+  workflow_directory: "automation/workflows"
+
+  discover_workflows_on_startup: true
+  reload_changed_workflows: true
+
+  validate_workflows: true
+  validate_actions: true
+
+  allow_nested_workflows: true
+  maximum_nesting_depth: 5
+
+  allow_parallel_steps: true
+  maximum_parallel_steps: 8
+
+  state_persistence: true
+
+  pause_and_resume: true
+
+  checkpoint_enabled: true
+
+
+# ============================================================
+# ACTION EXECUTOR
+# ============================================================
+
+action_executor:
+  enabled: true
+
+  timeout_seconds: 120
+
+  retry_enabled: true
+  maximum_retries: 2
+
+  continue_on_error: false
+
+  supported_actions:
+    - "computer"
+    - "file"
+    - "browser"
+    - "voice"
+    - "vision"
+    - "gesture"
+    - "ai"
+    - "notification"
+    - "device"
+    - "media"
+    - "calendar"
+    - "task"
+    - "shell"
+
+  require_permission_check: true
+
+  require_confirmation_for_sensitive_actions: true
+
+
+# ============================================================
+# TRIGGER MANAGER
+# ============================================================
+
+trigger_manager:
+  enabled: true
+
+  supported_triggers:
+    - "manual"
+    - "voice"
+    - "gesture"
+    - "time"
+    - "schedule"
+    - "event"
+    - "file"
+    - "application"
+    - "device"
+    - "system"
+    - "webhook"
+
+  debounce_enabled: true
+  default_debounce_seconds: 1
+
+  prevent_duplicate_triggers: true
+
+  maximum_trigger_rate_per_minute: 60
+
+
+# ============================================================
+# SCHEDULED TASKS
+# ============================================================
+
+scheduled_tasks:
+  enabled: true
+
+  timezone: "Asia/Kolkata"
+
+  persist_schedules: true
+
+  run_missed_tasks: false
+
+  maximum_scheduled_tasks: 100
+
+  minimum_schedule_interval_seconds: 10
+
+  allow_recurring_tasks: true
+
+
+# ============================================================
+# ROUTINES
+# ============================================================
+
+routines:
+  enabled: true
+
+  automatic_routines: true
+
+  routine_directory: "automation/workflows"
+
+  supported_routines:
+    - "morning"
+    - "study"
+    - "coding"
+    - "custom"
+
+  allow_custom_routines: true
+
+  require_confirmation_for_new_routines: true
+
+
+# ============================================================
+# MACROS
+# ============================================================
+
+macros:
+  enabled: true
+
+  allow_recording: true
+
+  allow_replay: true
+
+  allow_editing: true
+
+  maximum_macro_steps: 200
+
+  playback_speed: 1.0
+
+  pause_between_actions_ms: 100
+
+  require_confirmation_for_system_macros: true
+
+
+# ============================================================
+# VOICE AUTOMATION
+# ============================================================
+
+voice:
+  enabled: true
+
+  allow_voice_triggered_workflows: true
+
+  allow_voice_created_workflows: true
+
+  allow_voice_modification: true
+
+  require_confirmation_for_destructive_workflows: true
+
+  example_phrases:
+    start_workflow:
+      - "run my morning routine"
+      - "start my study routine"
+      - "start coding mode"
+
+    stop_workflow:
+      - "stop automation"
+      - "cancel workflow"
+      - "stop this routine"
+
+    pause_workflow:
+      - "pause automation"
+      - "pause this workflow"
+
+    resume_workflow:
+      - "resume automation"
+      - "continue the workflow"
+
+
+# ============================================================
+# GESTURE AUTOMATION
+# ============================================================
+
+gesture:
+  enabled: true
+
+  allow_gesture_triggered_workflows: true
+
+  supported_gestures:
+    pinch: "select"
+    grab: "activate"
+    palm: "pause"
+    swipe_left: "previous"
+    swipe_right: "next"
+    swipe_up: "scroll_up"
+    swipe_down: "scroll_down"
+
+  require_stable_gesture: true
+
+  minimum_confidence: 0.70
+
+
+# ============================================================
+# AI AUTOMATION
+# ============================================================
+
+ai:
+  enabled: true
+
+  allow_ai_generated_workflows: true
+
+  allow_ai_modified_workflows: true
+
+  automatic_task_decomposition: true
+
+  automatic_action_selection: true
+
+  automatic_error_recovery: true
+
+  automatic_replanning: true
+
+  require_validation_before_execution: true
+
+  require_confirmation_for_high_risk_workflows: true
+
+
+# ============================================================
+# CONDITIONS
+# ============================================================
+
+conditions:
+  enabled: true
+
+  supported:
+    - "equals"
+    - "not_equals"
+    - "greater_than"
+    - "less_than"
+    - "contains"
+    - "exists"
+    - "not_exists"
+    - "and"
+    - "or"
+    - "not"
+    - "time"
+    - "date"
+    - "device_status"
+    - "application_status"
+    - "file_exists"
+    - "process_running"
+    - "network_status"
+
+
+# ============================================================
+# VARIABLES
+# ============================================================
+
+variables:
+  enabled: true
+
+  global_variables: true
+
+  workflow_variables: true
+
+  environment_variables: true
+
+  runtime_variables: true
+
+  allow_variable_interpolation: true
+
+  syntax: "${variable}"
+
+
+# ============================================================
+# WORKFLOW STATE
+# ============================================================
+
+state:
+  enabled: true
+
+  persist_state: true
+
+  state_directory: "data/tasks"
+
+  checkpoint_interval_seconds: 10
+
+  recover_interrupted_workflows: true
+
+  maximum_saved_workflows: 100
+
+
+# ============================================================
+# FAILURE RECOVERY
+# ============================================================
+
+recovery:
+  enabled: true
+
+  retry_failed_actions: true
+
+  maximum_retries: 2
+
+  exponential_backoff: true
+
+  initial_retry_delay_seconds: 1
+
+  maximum_retry_delay_seconds: 30
+
+  rollback_enabled: true
+
+  rollback_on_critical_error: true
+
+  automatic_replanning: true
+
+  notify_user_on_failure: true
+
+
+# ============================================================
+# SECURITY
+# ============================================================
+
+security:
+  enabled: true
+
+  validate_workflows: true
+
+  validate_actions: true
+
+  permission_checks: true
+
+  sandbox_generated_code: true
+
+  restrict_shell_commands: true
+
+  restrict_filesystem_access: true
+
+  restrict_network_access: true
+
+  require_confirmation_for_destructive_actions: true
+
+  require_confirmation_for_external_actions: true
+
+  require_confirmation_for_credentials: true
+
+  maximum_workflow_runtime_seconds: 3600
+
+
+# ============================================================
+# DESTRUCTIVE ACTIONS
+# ============================================================
+
+destructive_actions:
+  require_confirmation: true
+
+  actions:
+    - "delete_file"
+    - "delete_folder"
+    - "format_drive"
+    - "shutdown"
+    - "restart"
+    - "terminate_process"
+    - "send_email"
+    - "send_message"
+    - "financial_transaction"
+    - "modify_security_settings"
+    - "modify_credentials"
+
+
+# ============================================================
+# NOTIFICATIONS
+# ============================================================
+
+notifications:
+  enabled: true
+
+  notify_on_start: false
+
+  notify_on_completion: true
+
+  notify_on_failure: true
+
+  notify_on_pause: true
+
+  notify_on_resume: true
+
+  notify_on_cancellation: true
+
+  notification_priority: "normal"
+
+
+# ============================================================
+# LOGGING
+# ============================================================
+
+logging:
+  enabled: true
+
+  level: "INFO"
+
+  log_workflow_start: true
+
+  log_workflow_completion: true
+
+  log_workflow_failure: true
+
+  log_action_execution: true
+
+  log_trigger_events: true
+
+  log_state_changes: true
+
+  redact_sensitive_data: true
+
+  log_directory: "logs/automation"
+
+
+# ============================================================
+# PERFORMANCE
+# ============================================================
+
+performance:
+  asynchronous_execution: true
+
+  parallel_execution: true
+
+  maximum_workers: 8
+
+  queue_size: 100
+
+  cache_workflows: true
+
+  cache_compiled_workflows: true
+
+  adaptive_resource_usage: true
+
+
+# ============================================================
+# DEVELOPMENT
+# ============================================================
+
+development:
+  debug: true
+
+  dry_run: false
+
+  simulate_actions: false
+
+  validate_only: false
+
+  verbose_logs: false
+
+  allow_test_workflows: true
+
+
+# ============================================================
+# END OF AUTOMATION CONFIGURATION
+# ============================================================
+```

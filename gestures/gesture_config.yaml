@@ -1,0 +1,643 @@
+# ============================================================================
+# RENIX - Gesture Engine Configuration
+# ============================================================================
+# Central configuration for hand, palm, drag, swipe and two-hand gestures.
+#
+# Coordinate system:
+#   x: 0.0 -> left, 1.0 -> right
+#   y: 0.0 -> top,  1.0 -> bottom
+#   z: MediaPipe-relative depth
+# ============================================================================
+
+
+# ----------------------------------------------------------------------------
+# GLOBAL
+# ----------------------------------------------------------------------------
+
+enabled: true
+
+debug: false
+
+log_gestures: true
+
+coordinate_system: normalized
+
+max_hands: 2
+
+minimum_hand_confidence: 0.45
+
+minimum_tracking_confidence: 0.45
+
+detection_confidence: 0.50
+
+tracking_confidence: 0.50
+
+model_complexity: 1
+
+static_image_mode: false
+
+
+# ----------------------------------------------------------------------------
+# GENERAL SMOOTHING
+# ----------------------------------------------------------------------------
+
+smoothing:
+
+  enabled: true
+
+  position: 0.35
+
+  velocity: 0.30
+
+  rotation: 0.30
+
+  scale: 0.30
+
+  gesture_confidence: 0.25
+
+  deadzone: 0.002
+
+
+# ----------------------------------------------------------------------------
+# PALM
+# ----------------------------------------------------------------------------
+
+palm:
+
+  enabled: true
+
+  minimum_confidence: 0.35
+
+  minimum_landmarks: 21
+
+  smoothing: 0.35
+
+  orientation_smoothing: 0.30
+
+  stability_threshold: 0.015
+
+  calculate:
+
+    center: true
+
+    width: true
+
+    height: true
+
+    depth: true
+
+    area: true
+
+    orientation: true
+
+    tilt: true
+
+    spread: true
+
+    velocity: true
+
+    stability: true
+
+
+# ----------------------------------------------------------------------------
+# POINT / COORDINATE SYSTEM
+# ----------------------------------------------------------------------------
+
+point:
+
+  precision: 6
+
+  clamp_coordinates: true
+
+  min_x: 0.0
+  max_x: 1.0
+
+  min_y: 0.0
+  max_y: 1.0
+
+  min_z: -1.0
+  max_z: 1.0
+
+
+# ----------------------------------------------------------------------------
+# PINCH
+# ----------------------------------------------------------------------------
+
+pinch:
+
+  enabled: true
+
+  thumb_tip: 4
+
+  index_tip: 8
+
+  activation_threshold: 0.055
+
+  release_threshold: 0.075
+
+  strong_threshold: 0.035
+
+  activation_frames: 2
+
+  release_frames: 2
+
+  smoothing: 0.35
+
+  minimum_confidence: 0.45
+
+  hysteresis: true
+
+
+# ----------------------------------------------------------------------------
+# DRAG
+# ----------------------------------------------------------------------------
+
+drag:
+
+  enabled: true
+
+  activation:
+
+    pinch_required: true
+
+    pinch_threshold: 0.055
+
+    activation_frames: 2
+
+  release:
+
+    pinch_threshold: 0.075
+
+    release_frames: 2
+
+  movement:
+
+    minimum_distance: 0.004
+
+    smoothing: 0.40
+
+    max_frame_time: 0.30
+
+  tracking:
+
+    use_pinch_midpoint: true
+
+    use_palm_center_fallback: true
+
+  confidence:
+
+    minimum: 0.45
+
+
+# ----------------------------------------------------------------------------
+# SWIPE
+# ----------------------------------------------------------------------------
+
+swipe:
+
+  enabled: true
+
+  minimum_distance: 0.12
+
+  minimum_speed: 0.65
+
+  maximum_duration: 0.65
+
+  minimum_confidence: 0.40
+
+  direction_consistency: 0.65
+
+  smoothing: 0.35
+
+  cooldown: 0.35
+
+  activation_frames: 2
+
+  directions:
+
+    left: true
+
+    right: true
+
+    up: true
+
+    down: true
+
+  thresholds:
+
+    horizontal_priority: 1.20
+
+    vertical_priority: 1.20
+
+
+# ----------------------------------------------------------------------------
+# TWO-HAND GESTURES
+# ----------------------------------------------------------------------------
+
+two_hand:
+
+  enabled: true
+
+  minimum_confidence: 0.40
+
+  smoothing: 0.35
+
+  minimum_frames: 2
+
+  pinch_threshold: 0.055
+
+  spread_threshold: 0.22
+
+  zoom_threshold: 0.018
+
+  rotation_threshold: 7.0
+
+  gestures:
+
+    pinch: true
+
+    spread: true
+
+    move_together: true
+
+    move_apart: true
+
+    zoom_in: true
+
+    zoom_out: true
+
+    rotate_clockwise: true
+
+    rotate_counterclockwise: true
+
+
+# ----------------------------------------------------------------------------
+# ZOOM
+# ----------------------------------------------------------------------------
+
+zoom:
+
+  enabled: true
+
+  mode: two_hand
+
+  minimum_hand_distance: 0.08
+
+  maximum_hand_distance: 0.85
+
+  movement_threshold: 0.018
+
+  sensitivity: 1.0
+
+  smoothing: 0.30
+
+  minimum_confidence: 0.45
+
+  minimum_delta: 0.005
+
+  maximum_delta: 0.15
+
+  inversion: false
+
+  limits:
+
+    minimum_scale: 0.25
+
+    maximum_scale: 4.00
+
+    default_scale: 1.00
+
+
+# ----------------------------------------------------------------------------
+# ROTATION
+# ----------------------------------------------------------------------------
+
+rotation:
+
+  enabled: true
+
+  mode: two_hand
+
+  minimum_angle: 7.0
+
+  maximum_angle_per_frame: 45.0
+
+  smoothing: 0.30
+
+  sensitivity: 1.0
+
+  clockwise: true
+
+  counterclockwise: true
+
+  inversion: false
+
+
+# ----------------------------------------------------------------------------
+# HAND MOVEMENT
+# ----------------------------------------------------------------------------
+
+movement:
+
+  enabled: true
+
+  minimum_delta: 0.003
+
+  velocity:
+
+    enabled: true
+
+    smoothing: 0.30
+
+    maximum: 5.0
+
+  acceleration:
+
+    enabled: true
+
+    smoothing: 0.25
+
+  stability:
+
+    enabled: true
+
+    threshold: 0.015
+
+    required_frames: 3
+
+
+# ----------------------------------------------------------------------------
+# FINGER LANDMARKS
+# ----------------------------------------------------------------------------
+
+landmarks:
+
+  wrist: 0
+
+  thumb:
+
+    cmc: 1
+    mcp: 2
+    ip: 3
+    tip: 4
+
+  index:
+
+    mcp: 5
+    pip: 6
+    dip: 7
+    tip: 8
+
+  middle:
+
+    mcp: 9
+    pip: 10
+    dip: 11
+    tip: 12
+
+  ring:
+
+    mcp: 13
+    pip: 14
+    dip: 15
+    tip: 16
+
+  pinky:
+
+    mcp: 17
+    pip: 18
+    dip: 19
+    tip: 20
+
+
+# ----------------------------------------------------------------------------
+# GESTURE PRIORITY
+# ----------------------------------------------------------------------------
+# Higher priority gestures are resolved first when multiple gestures
+# appear simultaneously.
+
+priority:
+
+  - two_hand_zoom
+  - two_hand_rotate
+  - drag
+  - pinch
+  - swipe
+  - two_hand_spread
+  - two_hand_move
+  - palm
+  - none
+
+
+# ----------------------------------------------------------------------------
+# CONFLICT RESOLUTION
+# ----------------------------------------------------------------------------
+
+conflicts:
+
+  enabled: true
+
+  drag_over_swipe: true
+
+  pinch_over_palm: true
+
+  two_hand_over_single_hand: true
+
+  zoom_over_spread: true
+
+  rotation_over_move: true
+
+  cooldown_after_trigger: 0.15
+
+
+# ----------------------------------------------------------------------------
+# GESTURE COOLDOWNS
+# ----------------------------------------------------------------------------
+
+cooldowns:
+
+  global: 0.10
+
+  pinch: 0.10
+
+  drag_start: 0.15
+
+  drag_end: 0.15
+
+  swipe: 0.35
+
+  zoom: 0.08
+
+  rotation: 0.08
+
+  two_hand: 0.10
+
+
+# ----------------------------------------------------------------------------
+# TEMPORAL FILTERING
+# ----------------------------------------------------------------------------
+
+temporal:
+
+  enabled: true
+
+  minimum_frames: 2
+
+  maximum_frame_gap: 0.30
+
+  confirmation_frames: 2
+
+  release_frames: 2
+
+  prediction:
+
+    enabled: true
+
+    amount: 0.15
+
+
+# ----------------------------------------------------------------------------
+# FALSE-POSITIVE PROTECTION
+# ----------------------------------------------------------------------------
+
+false_positive_protection:
+
+  enabled: true
+
+  minimum_movement: 0.003
+
+  maximum_jump: 0.25
+
+  reject_tracking_jumps: true
+
+  reject_low_confidence: true
+
+  reject_invalid_landmarks: true
+
+  reject_stale_frames: true
+
+
+# ----------------------------------------------------------------------------
+# HAND LOSS
+# ----------------------------------------------------------------------------
+
+tracking_loss:
+
+  enabled: true
+
+  grace_period: 0.15
+
+  reset_after: 0.50
+
+  cancel_drag: true
+
+  cancel_swipe: true
+
+  cancel_zoom: true
+
+  cancel_rotation: true
+
+
+# ----------------------------------------------------------------------------
+# LEFT / RIGHT HAND
+# ----------------------------------------------------------------------------
+
+hand_assignment:
+
+  enabled: true
+
+  use_model_label: true
+
+  fallback_to_position: true
+
+  left:
+
+    x_max: 0.50
+
+  right:
+
+    x_min: 0.50
+
+
+# ----------------------------------------------------------------------------
+# GESTURE OUTPUT
+# ----------------------------------------------------------------------------
+
+output:
+
+  enabled: true
+
+  emit_events: true
+
+  include_coordinates: true
+
+  include_velocity: true
+
+  include_confidence: true
+
+  include_metadata: true
+
+  normalized_coordinates: true
+
+  event_format: standard
+
+
+# ----------------------------------------------------------------------------
+# CALLBACK SYSTEM
+# ----------------------------------------------------------------------------
+
+callbacks:
+
+  enabled: true
+
+  asynchronous: false
+
+  swallow_exceptions: true
+
+  max_callbacks: 100
+
+
+# ----------------------------------------------------------------------------
+# PERFORMANCE
+# ----------------------------------------------------------------------------
+
+performance:
+
+  target_fps: 30
+
+  maximum_processing_time_ms: 25
+
+  skip_duplicate_frames: false
+
+  cache_landmarks: true
+
+  cache_duration: 0.05
+
+
+# ----------------------------------------------------------------------------
+# DEBUG
+# ----------------------------------------------------------------------------
+
+debug_options:
+
+  draw_landmarks: false
+
+  draw_palm_center: false
+
+  draw_bounding_box: false
+
+  draw_gesture_text: false
+
+  draw_velocity: false
+
+  draw_pinch_line: false
+
+  draw_two_hand_line: false
+
+  draw_zoom_indicator: false
+
+  draw_rotation_indicator: false
+
+  show_confidence: false
+
+  show_fps: false

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "store_version": 1,
+  "format": "renix_embedding_store",
+
+  "metadata": {
+    "name": "RENIX Embedding Store",
+    "description": "Persistent vector embeddings used for semantic memory and retrieval.",
+    "created_at": null,
+    "updated_at": null,
+    "last_write_at": null,
+    "last_read_at": null,
+    "last_index_rebuild": null,
+    "managed_by": "RENIX Embedding Manager"
+  },
+
+  "configuration": {
+    "enabled": true,
+    "auto_save": true,
+    "auto_update": true,
+    "auto_index": true,
+    "normalize_vectors": true,
+    "deduplication": true,
+    "validation_on_write": true,
+    "integrity_checks": true,
+    "versioning": true
+  },
+
+  "embedding_models": {},
+
+  "embeddings": [],
+
+  "statistics": {
+    "total_embeddings": 0,
+    "active_embeddings": 0,
+    "deleted_embeddings": 0,
+    "total_dimensions": 0,
+    "total_vectors": 0,
+    "average_dimension": 0,
+    "total_memory_records": 0,
+    "total_conversation_records": 0,
+    "total_document_records": 0
+  },
+
+  "integrity": {
+    "checksum_algorithm": "sha256",
+    "last_checksum": null,
+    "last_integrity_check": null,
+    "corrupted_records": 0,
+    "invalid_records": 0
+  }
+}
